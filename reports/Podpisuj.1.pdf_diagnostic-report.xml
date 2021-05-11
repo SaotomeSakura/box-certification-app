@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DiagnosticData xmlns="http://dss.esig.europa.eu/validation/diagnostic">
+    <DocumentName>hasValidSignature.in.pdf</DocumentName>
+    <ValidationDate>2021-05-11T10:47:28</ValidationDate>
+    <Signatures>
+        <Signature Id="S-AF3810AEA8F1A4CFB028FC89AA06E605118C2BEBAA30B2AB28468D5640181945">
+            <SignatureFilename>hasValidSignature.in.pdf</SignatureFilename>
+            <ClaimedSigningTime>2021-04-27T09:02:36</ClaimedSigningTime>
+            <SignatureFormat>PAdES-BASELINE-B</SignatureFormat>
+            <StructuralValidation>
+                <Valid>true</Valid>
+            </StructuralValidation>
+            <DigestMatchers>
+                <DigestMatcher type="MESSAGE_DIGEST">
+                    <DigestMethod>SHA256</DigestMethod>
+                    <DigestValue>VUN+QoqXYugQAOtzLZWA+hvMDkEnsqO8e4hhzIUjRiA=</DigestValue>
+                    <DataFound>true</DataFound>
+                    <DataIntact>true</DataIntact>
+                </DigestMatcher>
+            </DigestMatchers>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>3072</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <SigningCertificate Certificate="C-5F0847EFAA139CAE50FCA210AC9160D87E0388EA0B678CFC3B728D113B664A84">
+                <AttributePresent>true</AttributePresent>
+                <DigestValuePresent>true</DigestValuePresent>
+                <DigestValueMatch>true</DigestValueMatch>
+                <IssuerSerialMatch>true</IssuerSerialMatch>
+            </SigningCertificate>
+            <CertificateChain>
+                <ChainItem Certificate="C-5F0847EFAA139CAE50FCA210AC9160D87E0388EA0B678CFC3B728D113B664A84"/>
+                <ChainItem Certificate="C-9FE59800E8490F255387D423DDAB2D5B65F16AAED8B82518E216878ABC361CB7"/>
+                <ChainItem Certificate="C-D83477E0388C40BA092FECA484A5EBD3AD3028BF60220132E95158C00DDCE98F"/>
+            </CertificateChain>
+            <ContentType>1.2.840.113549.1.7.1</ContentType>
+            <CommitmentTypeIndication/>
+            <PDFRevision>
+                <SignatureFieldName>Signature1</SignatureFieldName>
+                <SignerInformationStore>
+                    <SignerInfo Processed="true">
+                        <Issuer>C=SK,L=Bratislava,O=Disig a.s.,OU=ACA-307-2007-2,CN=SVK eID ACA</Issuer>
+                        <SerialNumber>20200392902868807296177</SerialNumber>
+                    </SignerInfo>
+                </SignerInformationStore>
+                <PDFSignatureDictionary>
+                    <Type>Sig</Type>
+                    <Filter>Adobe.PPKLite</Filter>
+                    <SubFilter>ETSI.CAdES.detached</SubFilter>
+                    <SignatureByteRange>0 59626 92396 495</SignatureByteRange>
+                </PDFSignatureDictionary>
+            </PDFRevision>
+            <SignerDocumentRepresentations HashOnly="false" DocHashOnly="false"/>
+            <FoundCertificates>
+                <RelatedCertificate Certificate="C-5F0847EFAA139CAE50FCA210AC9160D87E0388EA0B678CFC3B728D113B664A84">
+                    <Origin>KEY_INFO</Origin>
+                    <CertificateRef>
+                        <Origin>SIGNING_CERTIFICATE</Origin>
+                        <IssuerSerial>MHgwaqRoMGYxCzAJBgNVBAYTAlNLMRMwEQYDVQQHDApCcmF0aXNsYXZhMRMwEQYDVQQKDApEaXNpZyBhLnMuMRcwFQYDVQQLDA5BQ0EtMzA3LTIwMDctMjEUMBIGA1UEAwwLU1ZLIGVJRCBBQ0ECCgRHEMQu5AEdpLE=</IssuerSerial>
+                        <DigestAlgoAndValue>
+                            <DigestMethod>SHA256</DigestMethod>
+                            <DigestValue>XwhH76oTnK5Q/KIQrJFg2H4DiOoLZ4z8O3KNETtmSoQ=</DigestValue>
+                        </DigestAlgoAndValue>
+                    </CertificateRef>
+                </RelatedCertificate>
+            </FoundCertificates>
+            <FoundRevocations/>
+            <FoundTimestamps/>
+            <SignatureScopes>
+                <SignatureScope SignerData="D-C4D000E174236BBAA5022FC857095085211FBE4F5FA7FBEEF482A8E13523958B">
+                    <Scope>FULL</Scope>
+                    <Name>Full PDF</Name>
+                    <Description>Full document</Description>
+                </SignatureScope>
+            </SignatureScopes>
+            <SignatureDigestReference>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>yrBjanFS3FvZqKNnHWj4tyAU3NQN6b20P8vYmUaAWGM=</DigestValue>
+            </SignatureDigestReference>
+            <SignatureValue>kWmo5Nd1XNFdVD/y5B52E349bohd4mlUyEr+XeyKwkaCj/kwbxyptZRFD0ECVi6eYMFleiiPl2JezREDigQyXGNt24xAzztxj2E/g/t0PFDPNku5lxz19pIc27JeQ29QuW9k29yEfxru8euqJkQdTwM+E2ZetVQbzQ03F34d8BAERhCvFK6EzOtpw6keNYOxmI8rZjsSsPSgpJosbA/c6e7S2n6HI1kel98PvL7kERfwc+ZHr1YGA3vqx9zDKYlOwQS+JYUBmpN5GSH/YF9gweKNrSn55FoZv/JivboBK6moCOqPQ9R+NFmC+x1+D9YH/bLr9Xttxzuked6cyNvg7w2tvBNAsyQyG3AShvSkHbH2BsN/i+nRntjGogzxyf7gDAMH0XN9ApxaEvU2G87kD4n9ZGLcBJXZgFp8X3KFeUpZU5voDbb0VFJvn+VGwkKyAJtR8+J/tdQpgeaFLdO8kj2swPVqT3X1GZqsRwz1BziRMoY3DKZKVI5kXunQu9vU</SignatureValue>
+        </Signature>
+    </Signatures>
+    <UsedCertificates>
+        <Certificate Id="C-5F0847EFAA139CAE50FCA210AC9160D87E0388EA0B678CFC3B728D113B664A84">
+            <SubjectDistinguishedName Format="CANONICAL">c=sk,l=bratislava-ružinov,2.5.4.4=#0c0a486f726e69637a6bc3a1,2.5.4.5=#1310504e4f534b2d38383534303136343930,cn=veronika horniczká,2.5.4.42=#0c085665726f6e696b61,street=astrová 759/16</SubjectDistinguishedName>
+            <SubjectDistinguishedName Format="RFC2253">C=SK,L=Bratislava-Ružinov,2.5.4.4=#0c0a486f726e69637a6bc3a1,2.5.4.5=#1310504e4f534b2d38383534303136343930,CN=Veronika Horniczká,2.5.4.42=#0c085665726f6e696b61,STREET=Astrová 759/16</SubjectDistinguishedName>
+            <IssuerDistinguishedName Format="CANONICAL">cn=svk eid aca,ou=aca-307-2007-2,o=disig a.s.,l=bratislava,c=sk</IssuerDistinguishedName>
+            <IssuerDistinguishedName Format="RFC2253">CN=SVK eID ACA,OU=ACA-307-2007-2,O=Disig a.s.,L=Bratislava,C=SK</IssuerDistinguishedName>
+            <SerialNumber>20200392902868807296177</SerialNumber>
+            <CommonName>Veronika Horniczká</CommonName>
+            <Locality>Bratislava-Ružinov</Locality>
+            <CountryName>SK</CountryName>
+            <GivenName>Veronika</GivenName>
+            <Surname>Horniczká</Surname>
+            <AuthorityInformationAccessUrls>
+                <aiaUrl>http://eidrep1.disig.sk/svkeidaca/cert/svkeidaca.p7c</aiaUrl>
+                <aiaUrl>http://eidrep2.disig.sk/svkeidaca/cert/svkeidaca.p7c</aiaUrl>
+            </AuthorityInformationAccessUrls>
+            <CRLDistributionPoints>
+                <crlUrl>http://eidrep1.disig.sk/svkeidaca/crl/svkeidaca.crl</crlUrl>
+                <crlUrl>http://eidrep2.disig.sk/svkeidaca/crl/svkeidaca.crl</crlUrl>
+            </CRLDistributionPoints>
+            <OCSPAccessUrls>
+                <ocspServerUrl>http://svkeidaca-ocsp.disig.sk/ocsp/svkeidaca</ocspServerUrl>
+            </OCSPAccessUrls>
+            <Sources>
+                <Source>SIGNATURE</Source>
+            </Sources>
+            <NotAfter>2025-06-02T10:21:40</NotAfter>
+            <NotBefore>2021-01-29T10:21:40</NotBefore>
+            <PublicKeySize>3072</PublicKeySize>
+            <PublicKeyEncryptionAlgo>RSA</PublicKeyEncryptionAlgo>
+            <KeyUsageBits>
+                <KeyUsage>nonRepudiation</KeyUsage>
+            </KeyUsageBits>
+            <ExtendedKeyUsages/>
+            <IdPkixOcspNoCheck>false</IdPkixOcspNoCheck>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>4096</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <SigningCertificate Certificate="C-9FE59800E8490F255387D423DDAB2D5B65F16AAED8B82518E216878ABC361CB7"/>
+            <CertificateChain>
+                <ChainItem Certificate="C-9FE59800E8490F255387D423DDAB2D5B65F16AAED8B82518E216878ABC361CB7"/>
+                <ChainItem Certificate="C-D83477E0388C40BA092FECA484A5EBD3AD3028BF60220132E95158C00DDCE98F"/>
+            </CertificateChain>
+            <Trusted>false</Trusted>
+            <SelfSigned>false</SelfSigned>
+            <CertificatePolicies>
+                <certificatePolicy Description="qcp-natural-qscd">0.4.0.194112.1.2</certificatePolicy>
+                <certificatePolicy>1.3.158.36061701.0.0.0.1.2.2</certificatePolicy>
+                <certificatePolicy cpsUrl="http://www.disig.sk/_pdf/cp_svk_eid.pdf">1.3.158.35975946.0.0.1.1.9</certificatePolicy>
+            </CertificatePolicies>
+            <QCStatementIds>
+                <qcStatementOid Description="qc-compliance">0.4.0.1862.1.1</qcStatementOid>
+                <qcStatementOid Description="qc-sscd">0.4.0.1862.1.4</qcStatementOid>
+                <qcStatementOid>0.4.0.1862.1.6</qcStatementOid>
+            </QCStatementIds>
+            <QCTypes>
+                <qcTypeOid Description="qc-type-esign">0.4.0.1862.1.6.1</qcTypeOid>
+            </QCTypes>
+            <TrustedServiceProviders/>
+            <Revocations>
+                <CertificateRevocation Revocation="R-D16EA17EF938C10D1079674098FD70C1C1ADF04D30BD4697917727908DFE0A34">
+                    <Status>true</Status>
+                </CertificateRevocation>
+            </Revocations>
+            <Base64Encoded>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</Base64Encoded>
+        </Certificate>
+        <Certificate Id="C-9FE59800E8490F255387D423DDAB2D5B65F16AAED8B82518E216878ABC361CB7">
+            <SubjectDistinguishedName Format="CANONICAL">cn=svk eid aca,ou=aca-307-2007-2,o=disig a.s.,l=bratislava,c=sk</SubjectDistinguishedName>
+            <SubjectDistinguishedName Format="RFC2253">CN=SVK eID ACA,OU=ACA-307-2007-2,O=Disig a.s.,L=Bratislava,C=SK</SubjectDistinguishedName>
+            <IssuerDistinguishedName Format="CANONICAL">cn=kca nbu sr 3,ou=sibep,o=narodny bezpecnostny urad,l=bratislava,c=sk</IssuerDistinguishedName>
+            <IssuerDistinguishedName Format="RFC2253">CN=KCA NBU SR 3,OU=SIBEP,O=Narodny bezpecnostny urad,L=Bratislava,C=SK</IssuerDistinguishedName>
+            <SerialNumber>1754</SerialNumber>
+            <CommonName>SVK eID ACA</CommonName>
+            <Locality>Bratislava</Locality>
+            <CountryName>SK</CountryName>
+            <OrganizationName>Disig a.s.</OrganizationName>
+            <OrganizationalUnit>ACA-307-2007-2</OrganizationalUnit>
+            <AuthorityInformationAccessUrls>
+                <aiaUrl>http://ep.nbusr.sk/kca/certs/kca3/kcanbusr3_p7c.p7c</aiaUrl>
+                <aiaUrl>ldap://ep.nbusr.sk/cn=KCA NBU SR 3,ou=SIBEP,o=Narodny bezpecnostny urad,l=Bratislava,c=SK?caCertificate;binary</aiaUrl>
+                <aiaUrl>ldap:///cn=KCA NBU SR 3,ou=SIBEP,o=Narodny bezpecnostny urad,l=Bratislava,c=SK?caCertificate;binary</aiaUrl>
+            </AuthorityInformationAccessUrls>
+            <CRLDistributionPoints>
+                <crlUrl>http://ep.nbusr.sk/kca/crls3/kcanbusr3.crl</crlUrl>
+                <crlUrl>ldap://ep.nbusr.sk/cn%3dKCA%20NBU%20SR%203,ou%3dSIBEP,o%3dNarodny%20bezpecnostny%20urad,l%3dBratislava,c%3dSK?certificateRevocationList</crlUrl>
+                <crlUrl>ldap:///cn%3dKCA%20NBU%20SR%203,ou%3dSIBEP,o%3dNarodny%20bezpecnostny%20urad,l%3dBratislava,c%3dSK?certificateRevocationList</crlUrl>
+            </CRLDistributionPoints>
+            <OCSPAccessUrls/>
+            <Sources>
+                <Source>AIA</Source>
+            </Sources>
+            <NotAfter>2025-11-01T10:13:27</NotAfter>
+            <NotBefore>2013-11-20T10:14:56</NotBefore>
+            <PublicKeySize>4096</PublicKeySize>
+            <PublicKeyEncryptionAlgo>RSA</PublicKeyEncryptionAlgo>
+            <KeyUsageBits>
+                <KeyUsage>keyCertSign</KeyUsage>
+                <KeyUsage>crlSign</KeyUsage>
+            </KeyUsageBits>
+            <ExtendedKeyUsages/>
+            <IdPkixOcspNoCheck>false</IdPkixOcspNoCheck>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>4096</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <SigningCertificate Certificate="C-D83477E0388C40BA092FECA484A5EBD3AD3028BF60220132E95158C00DDCE98F"/>
+            <CertificateChain>
+                <ChainItem Certificate="C-D83477E0388C40BA092FECA484A5EBD3AD3028BF60220132E95158C00DDCE98F"/>
+            </CertificateChain>
+            <Trusted>false</Trusted>
+            <SelfSigned>false</SelfSigned>
+            <CertificatePolicies>
+                <certificatePolicy cpsUrl="http://ep.nbusr.sk/kca/doc/kca_cps.pdf">1.3.158.36061701.0.0.0.1.2.2</certificatePolicy>
+            </CertificatePolicies>
+            <QCStatementIds/>
+            <QCTypes/>
+            <TrustedServiceProviders/>
+            <Revocations>
+                <CertificateRevocation Revocation="R-61A00DDEF4E1443276960A0C4C499BBF22A7D1DA26032007C75E793791772F01">
+                    <Status>true</Status>
+                </CertificateRevocation>
+            </Revocations>
+            <Base64Encoded>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</Base64Encoded>
+        </Certificate>
+        <Certificate Id="C-D83477E0388C40BA092FECA484A5EBD3AD3028BF60220132E95158C00DDCE98F">
+            <SubjectDistinguishedName Format="CANONICAL">cn=kca nbu sr 3,ou=sibep,o=narodny bezpecnostny urad,l=bratislava,c=sk</SubjectDistinguishedName>
+            <SubjectDistinguishedName Format="RFC2253">CN=KCA NBU SR 3,OU=SIBEP,O=Narodny bezpecnostny urad,L=Bratislava,C=SK</SubjectDistinguishedName>
+            <IssuerDistinguishedName Format="CANONICAL">cn=kca nbu sr 3,ou=sibep,o=narodny bezpecnostny urad,l=bratislava,c=sk</IssuerDistinguishedName>
+            <IssuerDistinguishedName Format="RFC2253">CN=KCA NBU SR 3,OU=SIBEP,O=Narodny bezpecnostny urad,L=Bratislava,C=SK</IssuerDistinguishedName>
+            <SerialNumber>1</SerialNumber>
+            <CommonName>KCA NBU SR 3</CommonName>
+            <Locality>Bratislava</Locality>
+            <CountryName>SK</CountryName>
+            <OrganizationName>Narodny bezpecnostny urad</OrganizationName>
+            <OrganizationalUnit>SIBEP</OrganizationalUnit>
+            <AuthorityInformationAccessUrls/>
+            <CRLDistributionPoints>
+                <crlUrl>http://ep.nbusr.sk/kca/crls3/kcanbusr3.crl</crlUrl>
+                <crlUrl>ldap://ep.nbusr.sk/cn%3dKCA%20NBU%20SR%203,ou%3dSIBEP,o%3dNarodny%20bezpecnostny%20urad,l%3dBratislava,c%3dSK?certificateRevocationList</crlUrl>
+                <crlUrl>ldap:///cn%3dKCA%20NBU%20SR%203,ou%3dSIBEP,o%3dNarodny%20bezpecnostny%20urad,l%3dBratislava,c%3dSK?certificateRevocationList</crlUrl>
+            </CRLDistributionPoints>
+            <OCSPAccessUrls/>
+            <Sources>
+                <Source>AIA</Source>
+            </Sources>
+            <NotAfter>2025-11-06T07:29:09</NotAfter>
+            <NotBefore>2009-11-06T09:59:39</NotBefore>
+            <PublicKeySize>4096</PublicKeySize>
+            <PublicKeyEncryptionAlgo>RSA</PublicKeyEncryptionAlgo>
+            <KeyUsageBits>
+                <KeyUsage>keyCertSign</KeyUsage>
+                <KeyUsage>crlSign</KeyUsage>
+            </KeyUsageBits>
+            <ExtendedKeyUsages/>
+            <IdPkixOcspNoCheck>false</IdPkixOcspNoCheck>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>4096</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <CertificateChain/>
+            <Trusted>false</Trusted>
+            <SelfSigned>true</SelfSigned>
+            <CertificatePolicies>
+                <certificatePolicy cpsUrl="http://ep.nbusr.sk/kca/doc/kca_cps.pdf">1.3.158.36061701.0.0.0.1.2.2</certificatePolicy>
+            </CertificatePolicies>
+            <QCStatementIds/>
+            <QCTypes/>
+            <TrustedServiceProviders/>
+            <Revocations/>
+            <Base64Encoded>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</Base64Encoded>
+        </Certificate>
+        <Certificate Id="C-D94C6BAAD8438AC962CCC2972DA50EBF5A01A5629D2E16C391E0E7012E940502">
+            <SubjectDistinguishedName Format="CANONICAL">cn=ocsp svk eid aca,ou=responder 1_1,o=disig a.s.,2.5.4.5=#130e4e5452534b2d3335393735393436,l=bratislava,c=sk</SubjectDistinguishedName>
+            <SubjectDistinguishedName Format="RFC2253">CN=OCSP SVK eID ACA,OU=Responder 1_1,O=Disig a.s.,2.5.4.5=#130e4e5452534b2d3335393735393436,L=Bratislava,C=SK</SubjectDistinguishedName>
+            <IssuerDistinguishedName Format="CANONICAL">cn=svk eid aca,ou=aca-307-2007-2,o=disig a.s.,l=bratislava,c=sk</IssuerDistinguishedName>
+            <IssuerDistinguishedName Format="RFC2253">CN=SVK eID ACA,OU=ACA-307-2007-2,O=Disig a.s.,L=Bratislava,C=SK</IssuerDistinguishedName>
+            <SerialNumber>23560034336549134785117</SerialNumber>
+            <CommonName>OCSP SVK eID ACA</CommonName>
+            <Locality>Bratislava</Locality>
+            <CountryName>SK</CountryName>
+            <OrganizationName>Disig a.s.</OrganizationName>
+            <OrganizationalUnit>Responder 1_1</OrganizationalUnit>
+            <AuthorityInformationAccessUrls>
+                <aiaUrl>http://eidrep1.disig.sk/svkeidaca/cert/svkeidaca.p7c</aiaUrl>
+                <aiaUrl>http://eidrep2.disig.sk/svkeidaca/cert/svkeidaca.p7c</aiaUrl>
+            </AuthorityInformationAccessUrls>
+            <CRLDistributionPoints>
+                <crlUrl>http://eidrep1.disig.sk/svkeidaca/crl/svkeidaca.crl</crlUrl>
+                <crlUrl>http://eidrep2.disig.sk/svkeidaca/crl/svkeidaca.crl</crlUrl>
+            </CRLDistributionPoints>
+            <OCSPAccessUrls/>
+            <Sources>
+                <Source>OCSP_RESPONSE</Source>
+            </Sources>
+            <NotAfter>2024-02-29T09:08:03</NotAfter>
+            <NotBefore>2021-03-01T09:08:03</NotBefore>
+            <PublicKeySize>2048</PublicKeySize>
+            <PublicKeyEncryptionAlgo>RSA</PublicKeyEncryptionAlgo>
+            <KeyUsageBits>
+                <KeyUsage>digitalSignature</KeyUsage>
+                <KeyUsage>nonRepudiation</KeyUsage>
+            </KeyUsageBits>
+            <ExtendedKeyUsages>
+                <extendedKeyUsagesOid Description="ocspSigning">1.3.6.1.5.5.7.3.9</extendedKeyUsagesOid>
+            </ExtendedKeyUsages>
+            <IdPkixOcspNoCheck>true</IdPkixOcspNoCheck>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>4096</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <SigningCertificate Certificate="C-9FE59800E8490F255387D423DDAB2D5B65F16AAED8B82518E216878ABC361CB7"/>
+            <CertificateChain>
+                <ChainItem Certificate="C-9FE59800E8490F255387D423DDAB2D5B65F16AAED8B82518E216878ABC361CB7"/>
+                <ChainItem Certificate="C-D83477E0388C40BA092FECA484A5EBD3AD3028BF60220132E95158C00DDCE98F"/>
+            </CertificateChain>
+            <Trusted>false</Trusted>
+            <SelfSigned>false</SelfSigned>
+            <CertificatePolicies>
+                <certificatePolicy>1.3.158.36061701.0.0.0.1.2.2</certificatePolicy>
+                <certificatePolicy cpsUrl="http://www.disig.sk/_pdf/cp_svk_eid.pdf">1.3.158.35975946.0.0.1.1.9</certificatePolicy>
+            </CertificatePolicies>
+            <QCStatementIds/>
+            <QCTypes/>
+            <TrustedServiceProviders/>
+            <Revocations/>
+            <Base64Encoded>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</Base64Encoded>
+        </Certificate>
+    </UsedCertificates>
+    <UsedRevocations>
+        <Revocation Id="R-61A00DDEF4E1443276960A0C4C499BBF22A7D1DA26032007C75E793791772F01">
+            <Origin>EXTERNAL</Origin>
+            <Type>CRL</Type>
+            <SourceAddress>http://ep.nbusr.sk/kca/crls3/kcanbusr3.crl</SourceAddress>
+            <ProductionDate>2021-05-11T10:05:17</ProductionDate>
+            <ThisUpdate>2021-05-11T10:05:17</ThisUpdate>
+            <NextUpdate>2021-05-12T10:05:17</NextUpdate>
+            <CertHashExtensionPresent>false</CertHashExtensionPresent>
+            <CertHashExtensionMatch>false</CertHashExtensionMatch>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>4096</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <SigningCertificate Certificate="C-D83477E0388C40BA092FECA484A5EBD3AD3028BF60220132E95158C00DDCE98F"/>
+            <CertificateChain>
+                <ChainItem Certificate="C-D83477E0388C40BA092FECA484A5EBD3AD3028BF60220132E95158C00DDCE98F"/>
+            </CertificateChain>
+            <DigestAlgoAndValue>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>YaAN3vThRDJ2lgoMTEmbvyKn0domAyAHx155N5F3LwE=</DigestValue>
+            </DigestAlgoAndValue>
+        </Revocation>
+        <Revocation Id="R-D16EA17EF938C10D1079674098FD70C1C1ADF04D30BD4697917727908DFE0A34">
+            <Origin>EXTERNAL</Origin>
+            <Type>OCSP</Type>
+            <SourceAddress>http://svkeidaca-ocsp.disig.sk/ocsp/svkeidaca</SourceAddress>
+            <ProductionDate>2021-05-11T10:47:28</ProductionDate>
+            <ThisUpdate>2021-05-11T10:47:20</ThisUpdate>
+            <NextUpdate>2021-05-11T10:57:20</NextUpdate>
+            <ArchiveCutOff>2013-11-20T10:14:56</ArchiveCutOff>
+            <CertHashExtensionPresent>true</CertHashExtensionPresent>
+            <CertHashExtensionMatch>true</CertHashExtensionMatch>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>2048</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <SigningCertificate Certificate="C-D94C6BAAD8438AC962CCC2972DA50EBF5A01A5629D2E16C391E0E7012E940502"/>
+            <CertificateChain>
+                <ChainItem Certificate="C-D94C6BAAD8438AC962CCC2972DA50EBF5A01A5629D2E16C391E0E7012E940502"/>
+                <ChainItem Certificate="C-9FE59800E8490F255387D423DDAB2D5B65F16AAED8B82518E216878ABC361CB7"/>
+                <ChainItem Certificate="C-D83477E0388C40BA092FECA484A5EBD3AD3028BF60220132E95158C00DDCE98F"/>
+            </CertificateChain>
+            <DigestAlgoAndValue>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>0W6hfvk4wQ0QeWdAmP1wwcGt8E0wvUaXkXcnkI3+CjQ=</DigestValue>
+            </DigestAlgoAndValue>
+        </Revocation>
+    </UsedRevocations>
+    <UsedTimestamps/>
+    <OrphanTokens/>
+    <OriginalDocuments>
+        <SignerData Id="D-C4D000E174236BBAA5022FC857095085211FBE4F5FA7FBEEF482A8E13523958B">
+            <ReferencedName>Full PDF</ReferencedName>
+            <DigestAlgoAndValue>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>txRC7y3r31qD2EMapXGOP9i39jnPLV+3tTclngvy31A=</DigestValue>
+            </DigestAlgoAndValue>
+        </SignerData>
+    </OriginalDocuments>
+    <TrustedLists/>
+</DiagnosticData>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SimpleReport xmlns="http://dss.esig.europa.eu/validation/simple-report">
+    <ValidationPolicy>
+        <PolicyName>QES AdESQC TL based</PolicyName>
+        <PolicyDescription>Validate electronic signatures and indicates whether they are Advanced electronic Signatures (AdES), AdES supported by a Qualified Certificate (AdES/QC) or a
+		Qualified electronic Signature (QES). All certificates and their related chains supporting the signatures are validated against the EU Member State Trusted Lists (this includes
+		signer's certificate and certificates used to validate certificate validity status services - CRLs, OCSP, and time-stamps).
+	</PolicyDescription>
+    </ValidationPolicy>
+    <ValidationTime>2021-05-10T23:49:54</ValidationTime>
+    <DocumentName>hasValidSignature.in.pdf</DocumentName>
+    <ValidSignaturesCount>0</ValidSignaturesCount>
+    <SignaturesCount>1</SignaturesCount>
+    <Signature SignatureFormat="PAdES-BASELINE-LTA" Id="S-BFD960148D49BCE39F5785274B1DB2510A064CB0FB5BB693398DA957E498651A">
+        <CertificateChain>
+            <Certificate>
+                <id>C-5F0847EFAA139CAE50FCA210AC9160D87E0388EA0B678CFC3B728D113B664A84</id>
+                <qualifiedName>Veronika Horniczká</qualifiedName>
+            </Certificate>
+            <Certificate>
+                <id>C-9FE59800E8490F255387D423DDAB2D5B65F16AAED8B82518E216878ABC361CB7</id>
+                <qualifiedName>SVK eID ACA</qualifiedName>
+            </Certificate>
+            <Certificate>
+                <id>C-D83477E0388C40BA092FECA484A5EBD3AD3028BF60220132E95158C00DDCE98F</id>
+                <qualifiedName>KCA NBU SR 3</qualifiedName>
+            </Certificate>
+        </CertificateChain>
+        <Indication>INDETERMINATE</Indication>
+        <SubIndication>NO_CERTIFICATE_CHAIN_FOUND</SubIndication>
+        <Errors>Unable to build a certificate chain until a trusted list!</Errors>
+        <Errors>The result of the LTV validation process is not acceptable to continue the process!</Errors>
+        <Errors>The certificate chain for signature is not trusted, it does not contain a trust anchor.</Errors>
+        <Errors>The result of the timestamps validation process is not conclusive!</Errors>
+        <Errors>The certificate chain for timestamp is not trusted, it does not contain a trust anchor.</Errors>
+        <Warnings>The signature/seal is an INDETERMINATE AdES digital signature!</Warnings>
+        <SigningTime>2021-05-10T23:15:28</SigningTime>
+        <BestSignatureTime>2021-05-10T23:49:54</BestSignatureTime>
+        <SignedBy>Veronika Horniczká</SignedBy>
+        <SignatureLevel description="Not applicable">N/A</SignatureLevel>
+        <SignatureScope name="PDF previous version #1" scope="PARTIAL">The document byte range: [0, 59626, 92396, 495]</SignatureScope>
+    </Signature>
+</SimpleReport>

@@ -1,0 +1,1638 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE SignaturePolicy [
+
+<!-- ASN.1 module ETS-ElectronicSignaturePolicies-88syntax { iso(1) member-body(2) us(840)
+	rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) id-mod(0) 7 }  -->
+
+<!ELEMENT SignaturePolicy (signPolicyHashAlg, signPolicyInfo, signPolicyHash?)>
+    <!ELEMENT signPolicyHashAlg (algorithm, parameters?)>
+    <!ELEMENT signPolicyInfo (signPolicyIdentifier, dateOfIssue, policyIssuerName, fieldOfApplication, signatureValidationPolicy, signPolExtensions?)>
+    <!ELEMENT signPolicyHash (#PCDATA)>
+<!ELEMENT SignPolicyHash (#PCDATA)>
+<!ELEMENT SignPolicyInfo (signPolicyIdentifier, dateOfIssue, policyIssuerName, fieldOfApplication, signatureValidationPolicy, signPolExtensions?)>
+    <!ELEMENT signPolicyIdentifier (#PCDATA)>
+    <!ELEMENT dateOfIssue (#PCDATA)>
+    <!ELEMENT policyIssuerName (GeneralName*)>
+    <!ELEMENT fieldOfApplication (teletexString|printableString|universalString|utf8String|bmpString)>
+    <!ELEMENT signatureValidationPolicy (signingPeriod, commonRules, commitmentRules, signPolExtensions?)>
+    <!ELEMENT signPolExtensions (SignPolExtn*)>
+<!ELEMENT SignPolicyId (#PCDATA)>
+<!ELEMENT PolicyIssuerName (GeneralName*)>
+<!ELEMENT FieldOfApplication (teletexString|printableString|universalString|utf8String|bmpString)>
+<!ELEMENT SignatureValidationPolicy (signingPeriod, commonRules, commitmentRules, signPolExtensions?)>
+    <!ELEMENT signingPeriod (notBefore, notAfter?)>
+    <!ELEMENT commonRules (signerAndVeriferRules?, signingCertTrustCondition?, timeStampTrustCondition?, attributeTrustCondition?, algorithmConstraintSet?, signPolExtensions?)>
+    <!ELEMENT commitmentRules (CommitmentRule*)>
+    <!ELEMENT signPolExtensions (SignPolExtn*)>
+<!ELEMENT SigningPeriod (notBefore, notAfter?)>
+    <!ELEMENT notBefore (#PCDATA)>
+    <!ELEMENT notAfter (#PCDATA)>
+<!ELEMENT CommonRules (signerAndVeriferRules?, signingCertTrustCondition?, timeStampTrustCondition?, attributeTrustCondition?, algorithmConstraintSet?, signPolExtensions?)>
+    <!ELEMENT signerAndVeriferRules (signerRules, verifierRules)>
+    <!ELEMENT signingCertTrustCondition (signerTrustTrees, signerRevReq)>
+    <!ELEMENT timeStampTrustCondition (ttsCertificateTrustTrees?, ttsRevReq?, ttsNameConstraints?, cautionPeriod?, signatureTimestampDelay?)>
+    <!ELEMENT attributeTrustCondition (attributeMandated, howCertAttribute, attrCertificateTrustTrees?, attrRevReq?, attributeConstraints?)>
+    <!ELEMENT algorithmConstraintSet (signerAlgorithmConstraints?, eeCertAlgorithmConstraints?, caCertAlgorithmConstraints?, aaCertAlgorithmConstraints?, tsaCertAlgorithmConstraints?)>
+    <!ELEMENT signPolExtensions (SignPolExtn*)>
+<!ELEMENT CommitmentRules (CommitmentRule*)>
+<!ELEMENT CommitmentRule (selCommitmentTypes, signerAndVeriferRules?, signingCertTrustCondition?, timeStampTrustCondition?, attributeTrustCondition?, algorithmConstraintSet?, signPolExtensions?)>
+    <!ELEMENT selCommitmentTypes (SelectedCommitmentType*)>
+    <!ELEMENT signerAndVeriferRules (signerRules, verifierRules)>
+    <!ELEMENT signingCertTrustCondition (signerTrustTrees, signerRevReq)>
+    <!ELEMENT timeStampTrustCondition (ttsCertificateTrustTrees?, ttsRevReq?, ttsNameConstraints?, cautionPeriod?, signatureTimestampDelay?)>
+    <!ELEMENT attributeTrustCondition (attributeMandated, howCertAttribute, attrCertificateTrustTrees?, attrRevReq?, attributeConstraints?)>
+    <!ELEMENT algorithmConstraintSet (signerAlgorithmConstraints?, eeCertAlgorithmConstraints?, caCertAlgorithmConstraints?, aaCertAlgorithmConstraints?, tsaCertAlgorithmConstraints?)>
+    <!ELEMENT signPolExtensions (SignPolExtn*)>
+<!ELEMENT SelectedCommitmentTypes (SelectedCommitmentType*)>
+<!ELEMENT SelectedCommitmentType (empty|recognizedCommitmentType)>
+    <!ELEMENT empty EMPTY>
+    <!ELEMENT recognizedCommitmentType (identifier, fieldOfApplication?, semantics?)>
+<!ELEMENT CommitmentType (identifier, fieldOfApplication?, semantics?)>
+    <!ELEMENT identifier (#PCDATA)>
+    <!ELEMENT fieldOfApplication (teletexString|printableString|universalString|utf8String|bmpString)>
+    <!ELEMENT semantics (teletexString|printableString|universalString|utf8String|bmpString)>
+<!ELEMENT CommitmentTypeIdentifier (#PCDATA)>
+<!ELEMENT SignerAndVerifierRules (signerRules, verifierRules)>
+    <!ELEMENT signerRules (externalSignedData?, mandatedSignedAttr, mandatedUnsignedAttr, mandatedCertificateRef?, mandatedCertificateInfo?, signPolExtensions?)>
+    <!ELEMENT verifierRules (mandatedUnsignedAttr, signPolExtensions?)>
+<!ELEMENT SignerRules (externalSignedData?, mandatedSignedAttr, mandatedUnsignedAttr, mandatedCertificateRef?, mandatedCertificateInfo?, signPolExtensions?)>
+    <!ELEMENT externalSignedData (true|false)>
+    <!ELEMENT mandatedSignedAttr (ANY*)>
+    <!ELEMENT mandatedUnsignedAttr (ANY*)>
+    <!ELEMENT mandatedCertificateRef (signerOnly|fullPath)>
+    <!ELEMENT mandatedCertificateInfo (none|signerOnly|fullPath)>
+    <!ELEMENT signPolExtensions (SignPolExtn*)>
+<!ELEMENT CMSAttrs (ANY*)>
+<!ELEMENT CertRefReq (signerOnly|fullPath)>
+    <!ELEMENT signerOnly EMPTY>
+    <!ELEMENT fullPath EMPTY>
+<!ELEMENT CertInfoReq (none|signerOnly|fullPath)>
+    <!ELEMENT none EMPTY>
+    <!ELEMENT signerOnly EMPTY>
+    <!ELEMENT fullPath EMPTY>
+<!ELEMENT VerifierRules (mandatedUnsignedAttr, signPolExtensions?)>
+    <!ELEMENT mandatedUnsignedAttr (ANY*)>
+    <!ELEMENT signPolExtensions (SignPolExtn*)>
+<!ELEMENT MandatedUnsignedAttr (ANY*)>
+<!ELEMENT CertificateTrustTrees (CertificateTrustPoint*)>
+<!ELEMENT CertificateTrustPoint (trustpoint, pathLenConstraint?, acceptablePolicySet?, nameConstraints?, policyConstraints?)>
+    <!ELEMENT trustpoint (tbsCertificate, signatureAlgorithm, signature)>
+    <!ELEMENT pathLenConstraint (#PCDATA)>
+    <!ELEMENT acceptablePolicySet (CertPolicyId*)>
+    <!ELEMENT nameConstraints (permittedSubtrees?, excludedSubtrees?)>
+    <!ELEMENT policyConstraints (requireExplicitPolicy?, inhibitPolicyMapping?)>
+<!ELEMENT PathLenConstraint (#PCDATA)>
+<!ELEMENT AcceptablePolicySet (CertPolicyId*)>
+<!ELEMENT CertRevReq (endCertRevReq, caCerts)>
+    <!ELEMENT endCertRevReq (enuRevReq, exRevReq?)>
+    <!ELEMENT caCerts (enuRevReq, exRevReq?)>
+<!ELEMENT RevReq (enuRevReq, exRevReq?)>
+    <!ELEMENT enuRevReq (clrCheck|ocspCheck|bothCheck|eitherCheck|noCheck|other)>
+    <!ELEMENT exRevReq (SignPolExtn*)>
+<!ELEMENT EnuRevReq (clrCheck|ocspCheck|bothCheck|eitherCheck|noCheck|other)>
+    <!ELEMENT clrCheck EMPTY>
+    <!ELEMENT ocspCheck EMPTY>
+    <!ELEMENT bothCheck EMPTY>
+    <!ELEMENT eitherCheck EMPTY>
+    <!ELEMENT noCheck EMPTY>
+    <!ELEMENT other EMPTY>
+<!ELEMENT SigningCertTrustCondition (signerTrustTrees, signerRevReq)>
+    <!ELEMENT signerTrustTrees (CertificateTrustPoint*)>
+    <!ELEMENT signerRevReq (endCertRevReq, caCerts)>
+<!ELEMENT TimestampTrustCondition (ttsCertificateTrustTrees?, ttsRevReq?, ttsNameConstraints?, cautionPeriod?, signatureTimestampDelay?)>
+    <!ELEMENT ttsCertificateTrustTrees (CertificateTrustPoint*)>
+    <!ELEMENT ttsRevReq (endCertRevReq, caCerts)>
+    <!ELEMENT ttsNameConstraints (permittedSubtrees?, excludedSubtrees?)>
+    <!ELEMENT cautionPeriod (deltaSeconds, deltaMinutes, deltaHours, deltaDays)>
+    <!ELEMENT signatureTimestampDelay (deltaSeconds, deltaMinutes, deltaHours, deltaDays)>
+<!ELEMENT DeltaTime (deltaSeconds, deltaMinutes, deltaHours, deltaDays)>
+    <!ELEMENT deltaSeconds (#PCDATA)>
+    <!ELEMENT deltaMinutes (#PCDATA)>
+    <!ELEMENT deltaHours (#PCDATA)>
+    <!ELEMENT deltaDays (#PCDATA)>
+<!ELEMENT AttributeTrustCondition (attributeMandated, howCertAttribute, attrCertificateTrustTrees?, attrRevReq?, attributeConstraints?)>
+    <!ELEMENT attributeMandated (true|false)>
+    <!ELEMENT howCertAttribute (claimedAttribute|certifiedAttribtes|either)>
+    <!ELEMENT attrCertificateTrustTrees (CertificateTrustPoint*)>
+    <!ELEMENT attrRevReq (endCertRevReq, caCerts)>
+    <!ELEMENT attributeConstraints (attributeTypeConstraints?, attributeValueConstraints?)>
+<!ELEMENT HowCertAttribute (claimedAttribute|certifiedAttribtes|either)>
+    <!ELEMENT claimedAttribute EMPTY>
+    <!ELEMENT certifiedAttribtes EMPTY>
+    <!ELEMENT either EMPTY>
+<!ELEMENT AttributeConstraints (attributeTypeConstraints?, attributeValueConstraints?)>
+    <!ELEMENT attributeTypeConstraints (AttributeType*)>
+    <!ELEMENT attributeValueConstraints (AttributeTypeAndValue*)>
+<!ELEMENT AttributeTypeConstraints (AttributeType*)>
+<!ELEMENT AttributeValueConstraints (AttributeTypeAndValue*)>
+<!ELEMENT AlgorithmConstraintSet (signerAlgorithmConstraints?, eeCertAlgorithmConstraints?, caCertAlgorithmConstraints?, aaCertAlgorithmConstraints?, tsaCertAlgorithmConstraints?)>
+    <!ELEMENT signerAlgorithmConstraints (AlgAndLength*)>
+    <!ELEMENT eeCertAlgorithmConstraints (AlgAndLength*)>
+    <!ELEMENT caCertAlgorithmConstraints (AlgAndLength*)>
+    <!ELEMENT aaCertAlgorithmConstraints (AlgAndLength*)>
+    <!ELEMENT tsaCertAlgorithmConstraints (AlgAndLength*)>
+<!ELEMENT AlgorithmConstraints (AlgAndLength*)>
+<!ELEMENT AlgAndLength (algID, minKeyLength?, other?)>
+    <!ELEMENT algID (#PCDATA)>
+    <!ELEMENT minKeyLength (#PCDATA)>
+    <!ELEMENT other (SignPolExtn*)>
+<!ELEMENT SignPolExtensions (SignPolExtn*)>
+<!ELEMENT SignPolExtn (extnID, extnValue)>
+    <!ELEMENT extnID (#PCDATA)>
+    <!ELEMENT extnValue (#PCDATA)>
+
+<!-- ASN.1 module PKIX1Explicit88 { iso(1) identified-organization(3) dod(6) internet(1)
+	security(5) mechanisms(5) pkix(7) id-mod(0) id-pkix1-explicit(18) } rfc3280-PKIX1Explicit88.asn1 -->
+
+<!ELEMENT Attribute (type, values)>
+    <!ELEMENT type (#PCDATA)>
+    <!ELEMENT values (AttributeValue*)>
+<!ELEMENT AttributeType (#PCDATA)>
+<!ELEMENT AttributeValue ANY>
+<!ELEMENT AttributeTypeAndValue (type, value)>
+    <!ELEMENT type (#PCDATA)>
+    <!ELEMENT value ANY>
+<!ELEMENT X520name (teletexString|printableString|universalString|utf8String|bmpString)>
+    <!ELEMENT teletexString ANY>
+    <!ELEMENT printableString (#PCDATA)>
+    <!ELEMENT universalString ANY>
+    <!ELEMENT utf8String ANY>
+    <!ELEMENT bmpString ANY>
+<!ELEMENT X520CommonName (teletexString|printableString|universalString|utf8String|bmpString)>
+    <!ELEMENT teletexString ANY>
+    <!ELEMENT printableString (#PCDATA)>
+    <!ELEMENT universalString ANY>
+    <!ELEMENT utf8String ANY>
+    <!ELEMENT bmpString ANY>
+<!ELEMENT X520LocalityName (teletexString|printableString|universalString|utf8String|bmpString)>
+    <!ELEMENT teletexString ANY>
+    <!ELEMENT printableString (#PCDATA)>
+    <!ELEMENT universalString ANY>
+    <!ELEMENT utf8String ANY>
+    <!ELEMENT bmpString ANY>
+<!ELEMENT X520StateOrProvinceName (teletexString|printableString|universalString|utf8String|bmpString)>
+    <!ELEMENT teletexString ANY>
+    <!ELEMENT printableString (#PCDATA)>
+    <!ELEMENT universalString ANY>
+    <!ELEMENT utf8String ANY>
+    <!ELEMENT bmpString ANY>
+<!ELEMENT X520OrganizationName (teletexString|printableString|universalString|utf8String|bmpString)>
+    <!ELEMENT teletexString ANY>
+    <!ELEMENT printableString (#PCDATA)>
+    <!ELEMENT universalString ANY>
+    <!ELEMENT utf8String ANY>
+    <!ELEMENT bmpString ANY>
+<!ELEMENT X520OrganizationalUnitName (teletexString|printableString|universalString|utf8String|bmpString)>
+    <!ELEMENT teletexString ANY>
+    <!ELEMENT printableString (#PCDATA)>
+    <!ELEMENT universalString ANY>
+    <!ELEMENT utf8String ANY>
+    <!ELEMENT bmpString ANY>
+<!ELEMENT X520Title (teletexString|printableString|universalString|utf8String|bmpString)>
+    <!ELEMENT teletexString ANY>
+    <!ELEMENT printableString (#PCDATA)>
+    <!ELEMENT universalString ANY>
+    <!ELEMENT utf8String ANY>
+    <!ELEMENT bmpString ANY>
+<!ELEMENT X520dnQualifier (#PCDATA)>
+<!ELEMENT X520countryName (#PCDATA)>
+<!ELEMENT X520SerialNumber (#PCDATA)>
+<!ELEMENT X520Pseudonym (teletexString|printableString|universalString|utf8String|bmpString)>
+    <!ELEMENT teletexString ANY>
+    <!ELEMENT printableString (#PCDATA)>
+    <!ELEMENT universalString ANY>
+    <!ELEMENT utf8String ANY>
+    <!ELEMENT bmpString ANY>
+<!ELEMENT DomainComponent ANY>
+<!ELEMENT EmailAddress ANY>
+<!ELEMENT Name (rdnSequence)>
+    <!ELEMENT rdnSequence (RelativeDistinguishedName*)>
+<!ELEMENT RDNSequence (RelativeDistinguishedName*)>
+<!ELEMENT DistinguishedName (RelativeDistinguishedName*)>
+<!ELEMENT RelativeDistinguishedName (AttributeTypeAndValue*)>
+<!ELEMENT DirectoryString (teletexString|printableString|universalString|utf8String|bmpString)>
+    <!ELEMENT teletexString ANY>
+    <!ELEMENT printableString (#PCDATA)>
+    <!ELEMENT universalString ANY>
+    <!ELEMENT utf8String ANY>
+    <!ELEMENT bmpString ANY>
+<!ELEMENT Certificate (tbsCertificate, signatureAlgorithm, signature)>
+    <!ELEMENT tbsCertificate (version?, serialNumber, signature, issuer, validity, subject, subjectPublicKeyInfo, issuerUniqueID?, subjectUniqueID?, extensions?)>
+    <!ELEMENT signatureAlgorithm (algorithm, parameters?)>
+    <!ELEMENT signature (#PCDATA)>
+<!ELEMENT TBSCertificate (version?, serialNumber, signature, issuer, validity, subject, subjectPublicKeyInfo, issuerUniqueID?, subjectUniqueID?, extensions?)>
+    <!ELEMENT version (v1|v2|v3)>
+    <!ELEMENT serialNumber (#PCDATA)>
+    <!ELEMENT signature (algorithm, parameters?)>
+    <!ELEMENT issuer (rdnSequence)>
+    <!ELEMENT validity (notBefore, notAfter)>
+    <!ELEMENT subject (rdnSequence)>
+    <!ELEMENT subjectPublicKeyInfo (algorithm, subjectPublicKey)>
+    <!ELEMENT issuerUniqueID (#PCDATA)>
+    <!ELEMENT subjectUniqueID (#PCDATA)>
+    <!ELEMENT extensions (Extension*)>
+<!ELEMENT Version (v1|v2|v3)>
+    <!ELEMENT v1 EMPTY>
+    <!ELEMENT v2 EMPTY>
+    <!ELEMENT v3 EMPTY>
+<!ELEMENT CertificateSerialNumber (#PCDATA)>
+<!ELEMENT Validity (notBefore, notAfter)>
+    <!ELEMENT notBefore (utcTime|generalTime)>
+    <!ELEMENT notAfter (utcTime|generalTime)>
+<!ELEMENT Time (utcTime|generalTime)>
+    <!ELEMENT utcTime (#PCDATA)>
+    <!ELEMENT generalTime (#PCDATA)>
+<!ELEMENT UniqueIdentifier (#PCDATA)>
+<!ELEMENT SubjectPublicKeyInfo (algorithm, subjectPublicKey)>
+    <!ELEMENT algorithm (algorithm, parameters?)>
+    <!ELEMENT subjectPublicKey (#PCDATA)>
+<!ELEMENT Extensions (Extension*)>
+<!ELEMENT Extension (extnID, critical?, extnValue)>
+    <!ELEMENT extnID (#PCDATA)>
+    <!ELEMENT critical (true|false)>
+    <!ELEMENT extnValue (#PCDATA)>
+<!ELEMENT CertificateList (tbsCertList, signatureAlgorithm, signature)>
+    <!ELEMENT tbsCertList (version?, signature, issuer, thisUpdate, nextUpdate?, revokedCertificates?, crlExtensions?)>
+    <!ELEMENT signatureAlgorithm (algorithm, parameters?)>
+    <!ELEMENT signature (#PCDATA)>
+<!ELEMENT TBSCertList (version?, signature, issuer, thisUpdate, nextUpdate?, revokedCertificates?, crlExtensions?)>
+    <!ELEMENT version (v1|v2|v3)>
+    <!ELEMENT signature (algorithm, parameters?)>
+    <!ELEMENT issuer (rdnSequence)>
+    <!ELEMENT thisUpdate (utcTime|generalTime)>
+    <!ELEMENT nextUpdate (utcTime|generalTime)>
+    <!ELEMENT revokedCertificates (ANY*)>
+    <!ELEMENT crlExtensions (Extension*)>
+<!ELEMENT AlgorithmIdentifier (algorithm, parameters?)>
+    <!ELEMENT algorithm (#PCDATA)>
+    <!ELEMENT parameters ANY>
+<!ELEMENT ORAddress (built-in-standard-attributes, built-in-domain-defined-attributes?, extension-attributes?)>
+    <!ELEMENT built-in-standard-attributes (country-name?, administration-domain-name?, network-address?, terminal-identifier?, private-domain-name?, organization-name?, numeric-user-identifier?, personal-name?, organizational-unit-names?)>
+    <!ELEMENT built-in-domain-defined-attributes (BuiltInDomainDefinedAttribute*)>
+    <!ELEMENT extension-attributes (ExtensionAttribute*)>
+<!ELEMENT BuiltInStandardAttributes (country-name?, administration-domain-name?, network-address?, terminal-identifier?, private-domain-name?, organization-name?, numeric-user-identifier?, personal-name?, organizational-unit-names?)>
+    <!ELEMENT country-name (x121-dcc-code|iso-3166-alpha2-code)>
+    <!ELEMENT administration-domain-name (numeric|printable)>
+    <!ELEMENT network-address (#PCDATA)>
+    <!ELEMENT terminal-identifier (#PCDATA)>
+    <!ELEMENT private-domain-name (numeric|printable)>
+    <!ELEMENT organization-name (#PCDATA)>
+    <!ELEMENT numeric-user-identifier (#PCDATA)>
+    <!ELEMENT personal-name (surname|given-name|initials|generation-qualifier)*>
+    <!ELEMENT organizational-unit-names (OrganizationalUnitName*)>
+<!ELEMENT CountryName (x121-dcc-code|iso-3166-alpha2-code)>
+    <!ELEMENT x121-dcc-code (#PCDATA)>
+    <!ELEMENT iso-3166-alpha2-code (#PCDATA)>
+<!ELEMENT AdministrationDomainName (numeric|printable)>
+    <!ELEMENT numeric (#PCDATA)>
+    <!ELEMENT printable (#PCDATA)>
+<!ELEMENT NetworkAddress (#PCDATA)>
+<!ELEMENT X121Address (#PCDATA)>
+<!ELEMENT TerminalIdentifier (#PCDATA)>
+<!ELEMENT PrivateDomainName (numeric|printable)>
+    <!ELEMENT numeric (#PCDATA)>
+    <!ELEMENT printable (#PCDATA)>
+<!ELEMENT OrganizationName (#PCDATA)>
+<!ELEMENT NumericUserIdentifier (#PCDATA)>
+<!ELEMENT PersonalName (surname|given-name|initials|generation-qualifier)*>
+    <!ELEMENT surname (#PCDATA)>
+    <!ELEMENT given-name (#PCDATA)>
+    <!ELEMENT initials (#PCDATA)>
+    <!ELEMENT generation-qualifier (#PCDATA)>
+<!ELEMENT OrganizationalUnitNames (OrganizationalUnitName*)>
+<!ELEMENT OrganizationalUnitName (#PCDATA)>
+<!ELEMENT BuiltInDomainDefinedAttributes (BuiltInDomainDefinedAttribute*)>
+<!ELEMENT BuiltInDomainDefinedAttribute (type, value)>
+    <!ELEMENT type (#PCDATA)>
+    <!ELEMENT value (#PCDATA)>
+<!ELEMENT ExtensionAttributes (ExtensionAttribute*)>
+<!ELEMENT ExtensionAttribute (extension-attribute-type, extension-attribute-value)>
+    <!ELEMENT extension-attribute-type (#PCDATA)>
+    <!ELEMENT extension-attribute-value ANY>
+<!ELEMENT CommonName (#PCDATA)>
+<!ELEMENT TeletexCommonName ANY>
+<!ELEMENT TeletexOrganizationName ANY>
+<!ELEMENT TeletexPersonalName (surname|given-name|initials|generation-qualifier)*>
+    <!ELEMENT surname ANY>
+    <!ELEMENT given-name ANY>
+    <!ELEMENT initials ANY>
+    <!ELEMENT generation-qualifier ANY>
+<!ELEMENT TeletexOrganizationalUnitNames (TeletexOrganizationalUnitName*)>
+<!ELEMENT TeletexOrganizationalUnitName ANY>
+<!ELEMENT PDSName (#PCDATA)>
+<!ELEMENT PhysicalDeliveryCountryName (x121-dcc-code|iso-3166-alpha2-code)>
+    <!ELEMENT x121-dcc-code (#PCDATA)>
+    <!ELEMENT iso-3166-alpha2-code (#PCDATA)>
+<!ELEMENT PostalCode (numeric-code|printable-code)>
+    <!ELEMENT numeric-code (#PCDATA)>
+    <!ELEMENT printable-code (#PCDATA)>
+<!ELEMENT PhysicalDeliveryOfficeName (printable-string|teletex-string)*>
+<!ELEMENT PhysicalDeliveryOfficeNumber (printable-string|teletex-string)*>
+<!ELEMENT ExtensionORAddressComponents (printable-string|teletex-string)*>
+<!ELEMENT PhysicalDeliveryPersonalName (printable-string|teletex-string)*>
+<!ELEMENT PhysicalDeliveryOrganizationName (printable-string|teletex-string)*>
+<!ELEMENT ExtensionPhysicalDeliveryAddressComponents (printable-string|teletex-string)*>
+<!ELEMENT UnformattedPostalAddress (printable-address|teletex-string)*>
+    <!ELEMENT printable-address (ANY*)>
+    <!ELEMENT teletex-string ANY>
+<!ELEMENT StreetAddress (printable-string|teletex-string)*>
+<!ELEMENT PostOfficeBoxAddress (printable-string|teletex-string)*>
+<!ELEMENT PosteRestanteAddress (printable-string|teletex-string)*>
+<!ELEMENT UniquePostalName (printable-string|teletex-string)*>
+<!ELEMENT LocalPostalAttributes (printable-string|teletex-string)*>
+<!ELEMENT PDSParameter (printable-string|teletex-string)*>
+    <!ELEMENT printable-string (#PCDATA)>
+    <!ELEMENT teletex-string ANY>
+<!ELEMENT ExtendedNetworkAddress (e163-4-address|psap-address)>
+    <!ELEMENT e163-4-address (number, sub-address?)>
+        <!ELEMENT number (#PCDATA)>
+        <!ELEMENT sub-address (#PCDATA)>
+    <!ELEMENT psap-address (pSelector?, sSelector?, tSelector?, nAddresses)>
+<!ELEMENT PresentationAddress (pSelector?, sSelector?, tSelector?, nAddresses)>
+    <!ELEMENT pSelector (#PCDATA)>
+    <!ELEMENT sSelector (#PCDATA)>
+    <!ELEMENT tSelector (#PCDATA)>
+    <!ELEMENT nAddresses (ANY*)>
+<!ELEMENT TerminalType (telex|teletex|g3-facsimile|g4-facsimile|ia5-terminal|videotex)>
+    <!ELEMENT telex EMPTY>
+    <!ELEMENT teletex EMPTY>
+    <!ELEMENT g3-facsimile EMPTY>
+    <!ELEMENT g4-facsimile EMPTY>
+    <!ELEMENT ia5-terminal EMPTY>
+    <!ELEMENT videotex EMPTY>
+<!ELEMENT TeletexDomainDefinedAttributes (TeletexDomainDefinedAttribute*)>
+<!ELEMENT TeletexDomainDefinedAttribute (type, value)>
+    <!ELEMENT type ANY>
+    <!ELEMENT value ANY>
+
+<!-- ASN.1 module PKIX1Implicit88 { iso(1) identified-organization(3) dod(6) internet(1)
+	security(5) mechanisms(5) pkix(7) id-mod(0) id-pkix1-implicit(19) } rfc3280-PKIX1Implicit88.asn1 -->
+
+<!ELEMENT AuthorityKeyIdentifier (keyIdentifier?, authorityCertIssuer?, authorityCertSerialNumber?)>
+    <!ELEMENT keyIdentifier (#PCDATA)>
+    <!ELEMENT authorityCertIssuer (GeneralName*)>
+    <!ELEMENT authorityCertSerialNumber (#PCDATA)>
+<!ELEMENT KeyIdentifier (#PCDATA)>
+<!ELEMENT SubjectKeyIdentifier (#PCDATA)>
+<!ELEMENT KeyUsage (digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment, keyAgreement, keyCertSign, cRLSign, encipherOnly, decipherOnly)>
+    <!ELEMENT digitalSignature EMPTY>
+    <!ELEMENT nonRepudiation EMPTY>
+    <!ELEMENT keyEncipherment EMPTY>
+    <!ELEMENT dataEncipherment EMPTY>
+    <!ELEMENT keyAgreement EMPTY>
+    <!ELEMENT keyCertSign EMPTY>
+    <!ELEMENT cRLSign EMPTY>
+    <!ELEMENT encipherOnly EMPTY>
+    <!ELEMENT decipherOnly EMPTY>
+<!ELEMENT PrivateKeyUsagePeriod (notBefore?, notAfter?)>
+    <!ELEMENT notBefore (#PCDATA)>
+    <!ELEMENT notAfter (#PCDATA)>
+<!ELEMENT CertificatePolicies (PolicyInformation*)>
+<!ELEMENT PolicyInformation (policyIdentifier, policyQualifiers?)>
+    <!ELEMENT policyIdentifier (#PCDATA)>
+    <!ELEMENT policyQualifiers (PolicyQualifierInfo*)>
+<!ELEMENT CertPolicyId (#PCDATA)>
+<!ELEMENT PolicyQualifierInfo (policyQualifierId, qualifier)>
+    <!ELEMENT policyQualifierId (#PCDATA)>
+    <!ELEMENT qualifier ANY>
+<!ELEMENT PolicyQualifierId (#PCDATA)>
+<!ELEMENT CPSuri ANY>
+<!ELEMENT UserNotice (noticeRef?, explicitText?)>
+    <!ELEMENT noticeRef (organization, noticeNumbers)>
+    <!ELEMENT explicitText (ia5String|visibleString|bmpString|utf8String)>
+<!ELEMENT NoticeReference (organization, noticeNumbers)>
+    <!ELEMENT organization (ia5String|visibleString|bmpString|utf8String)>
+    <!ELEMENT noticeNumbers (ANY*)>
+<!ELEMENT DisplayText (ia5String|visibleString|bmpString|utf8String)>
+    <!ELEMENT ia5String ANY>
+    <!ELEMENT visibleString (#PCDATA)>
+    <!ELEMENT bmpString ANY>
+    <!ELEMENT utf8String ANY>
+<!ELEMENT PolicyMappings (ANY*)>
+<!ELEMENT SubjectAltName (GeneralName*)>
+<!ELEMENT GeneralNames (GeneralName*)>
+<!ELEMENT GeneralName (otherName|rfc822Name|dNSName|x400Address|directoryName|ediPartyName|uniformResourceIdentifier|iPAddress|registeredID)>
+    <!ELEMENT otherName (type-id, value)>
+    <!ELEMENT rfc822Name ANY>
+    <!ELEMENT dNSName ANY>
+    <!ELEMENT x400Address (built-in-standard-attributes, built-in-domain-defined-attributes?, extension-attributes?)>
+    <!ELEMENT directoryName (rdnSequence)>
+    <!ELEMENT ediPartyName (nameAssigner?, partyName)>
+    <!ELEMENT uniformResourceIdentifier ANY>
+    <!ELEMENT iPAddress (#PCDATA)>
+    <!ELEMENT registeredID (#PCDATA)>
+<!ELEMENT AnotherName (type-id, value)>
+    <!ELEMENT type-id (#PCDATA)>
+    <!ELEMENT value ANY>
+<!ELEMENT EDIPartyName (nameAssigner?, partyName)>
+    <!ELEMENT nameAssigner (teletexString|printableString|universalString|utf8String|bmpString)>
+    <!ELEMENT partyName (teletexString|printableString|universalString|utf8String|bmpString)>
+<!ELEMENT IssuerAltName (GeneralName*)>
+<!ELEMENT SubjectDirectoryAttributes (Attribute*)>
+<!ELEMENT BasicConstraints (cA?, pathLenConstraint?)>
+    <!ELEMENT cA (true|false)>
+    <!ELEMENT pathLenConstraint (#PCDATA)>
+<!ELEMENT NameConstraints (permittedSubtrees?, excludedSubtrees?)>
+    <!ELEMENT permittedSubtrees (GeneralSubtree*)>
+    <!ELEMENT excludedSubtrees (GeneralSubtree*)>
+<!ELEMENT GeneralSubtrees (GeneralSubtree*)>
+<!ELEMENT GeneralSubtree (base, minimum?, maximum?)>
+    <!ELEMENT base (otherName|rfc822Name|dNSName|x400Address|directoryName|ediPartyName|uniformResourceIdentifier|iPAddress|registeredID)>
+    <!ELEMENT minimum (#PCDATA)>
+    <!ELEMENT maximum (#PCDATA)>
+<!ELEMENT BaseDistance (#PCDATA)>
+<!ELEMENT PolicyConstraints (requireExplicitPolicy?, inhibitPolicyMapping?)>
+    <!ELEMENT requireExplicitPolicy (#PCDATA)>
+    <!ELEMENT inhibitPolicyMapping (#PCDATA)>
+<!ELEMENT SkipCerts (#PCDATA)>
+<!ELEMENT CRLDistributionPoints (DistributionPoint*)>
+<!ELEMENT DistributionPoint (distributionPoint?, reasons?, cRLIssuer?)>
+    <!ELEMENT distributionPoint (fullName|nameRelativeToCRLIssuer)>
+    <!ELEMENT reasons (unused, keyCompromise, cACompromise, affiliationChanged, superseded, cessationOfOperation, certificateHold, privilegeWithdrawn, aACompromise)>
+    <!ELEMENT cRLIssuer (GeneralName*)>
+<!ELEMENT DistributionPointName (fullName|nameRelativeToCRLIssuer)>
+    <!ELEMENT fullName (GeneralName*)>
+    <!ELEMENT nameRelativeToCRLIssuer (AttributeTypeAndValue*)>
+<!ELEMENT ReasonFlags (unused, keyCompromise, cACompromise, affiliationChanged, superseded, cessationOfOperation, certificateHold, privilegeWithdrawn, aACompromise)>
+    <!ELEMENT unused EMPTY>
+    <!ELEMENT keyCompromise EMPTY>
+    <!ELEMENT cACompromise EMPTY>
+    <!ELEMENT affiliationChanged EMPTY>
+    <!ELEMENT superseded EMPTY>
+    <!ELEMENT cessationOfOperation EMPTY>
+    <!ELEMENT certificateHold EMPTY>
+    <!ELEMENT privilegeWithdrawn EMPTY>
+    <!ELEMENT aACompromise EMPTY>
+<!ELEMENT ExtKeyUsageSyntax (KeyPurposeId*)>
+<!ELEMENT KeyPurposeId (#PCDATA)>
+<!ELEMENT InhibitAnyPolicy (#PCDATA)>
+<!ELEMENT FreshestCRL (DistributionPoint*)>
+<!ELEMENT AuthorityInfoAccessSyntax (AccessDescription*)>
+<!ELEMENT AccessDescription (accessMethod, accessLocation)>
+    <!ELEMENT accessMethod (#PCDATA)>
+    <!ELEMENT accessLocation (otherName|rfc822Name|dNSName|x400Address|directoryName|ediPartyName|uniformResourceIdentifier|iPAddress|registeredID)>
+<!ELEMENT SubjectInfoAccessSyntax (AccessDescription*)>
+<!ELEMENT CRLNumber (#PCDATA)>
+<!ELEMENT IssuingDistributionPoint (distributionPoint?, onlyContainsUserCerts?, onlyContainsCACerts?, onlySomeReasons?, indirectCRL?, onlyContainsAttributeCerts?)>
+    <!ELEMENT distributionPoint (fullName|nameRelativeToCRLIssuer)>
+    <!ELEMENT onlyContainsUserCerts (true|false)>
+    <!ELEMENT onlyContainsCACerts (true|false)>
+    <!ELEMENT onlySomeReasons (unused, keyCompromise, cACompromise, affiliationChanged, superseded, cessationOfOperation, certificateHold, privilegeWithdrawn, aACompromise)>
+    <!ELEMENT indirectCRL (true|false)>
+    <!ELEMENT onlyContainsAttributeCerts (true|false)>
+<!ELEMENT BaseCRLNumber (#PCDATA)>
+<!ELEMENT CRLReason (unspecified|keyCompromise|cACompromise|affiliationChanged|superseded|cessationOfOperation|certificateHold|removeFromCRL|privilegeWithdrawn|aACompromise)>
+    <!ELEMENT unspecified EMPTY>
+    <!ELEMENT keyCompromise EMPTY>
+    <!ELEMENT cACompromise EMPTY>
+    <!ELEMENT affiliationChanged EMPTY>
+    <!ELEMENT superseded EMPTY>
+    <!ELEMENT cessationOfOperation EMPTY>
+    <!ELEMENT certificateHold EMPTY>
+    <!ELEMENT removeFromCRL EMPTY>
+    <!ELEMENT privilegeWithdrawn EMPTY>
+    <!ELEMENT aACompromise EMPTY>
+<!ELEMENT CertificateIssuer (GeneralName*)>
+<!ELEMENT HoldInstructionCode (#PCDATA)>
+<!ELEMENT InvalidityDate (#PCDATA)>
+<!ELEMENT true EMPTY>
+<!ELEMENT false EMPTY>
+]>
+
+<SignaturePolicy>
+    <signPolicyHashAlg>
+        <algorithm>2.16.840.1.101.3.4.2.1</algorithm><!-- sha-256 | http://www.w3.org/2001/04/xmlenc#sha256 -->
+    </signPolicyHashAlg>
+    <signPolicyInfo>
+        <signPolicyIdentifier>1.3.158.36061701.0.0.1.10.4.0.11.1</signPolicyIdentifier>
+        <dateOfIssue>20100201000000Z</dateOfIssue>
+        <policyIssuerName>
+                <directoryName>
+                    <rdnSequence>
+                        <RelativeDistinguishedName>
+                            <AttributeTypeAndValue>
+                                <type>2.5.4.6</type><!-- countryName -->
+                                <value>13 02 53 4B</value><!-- SK -->
+                            </AttributeTypeAndValue>
+                        </RelativeDistinguishedName>
+                        <RelativeDistinguishedName>
+                            <AttributeTypeAndValue>
+                                <type>2.5.4.7</type><!-- localityName -->
+                                <value>0C 0A 42 72 61 74 69 73 6C 61 76 61</value><!-- Bratislava -->
+                            </AttributeTypeAndValue>
+                        </RelativeDistinguishedName>
+                        <RelativeDistinguishedName>
+                            <AttributeTypeAndValue>
+                                <type>2.5.4.10</type><!-- organizationName -->
+                                <value>
+                                    0C 19 4E 61 72 6F 64 6E 79 20 62 65 7A 70 65 63 
+                                    6E 6F 73 74 6E 79 20 75 72 61 64
+                                </value>
+                            </AttributeTypeAndValue>
+                        </RelativeDistinguishedName>
+                        <RelativeDistinguishedName>
+                            <AttributeTypeAndValue>
+                                <type>2.5.4.11</type><!-- organizationalUnitName -->
+                                <value>0C 0B 53 65 6B 63 69 61 20 49 42 45 50</value><!-- Sekcia IBEP -->
+                            </AttributeTypeAndValue>
+                        </RelativeDistinguishedName>
+                    </rdnSequence>
+                </directoryName>
+            
+                <uniformResourceIdentifier>http://www.nbusr.sk/archive/20100201000000zsignaturepolicy.der</uniformResourceIdentifier>
+            
+        </policyIssuerName>
+        <fieldOfApplication>
+            <utf8String>SK: Zaručený elektronický podpis v súlade s legislatívou Slovenskej republiky. EN: Qualified Electronic Signature in accordance with legislation in the Slovak Republic.</utf8String>
+        </fieldOfApplication>
+        <signatureValidationPolicy>
+            <signingPeriod>
+                <notBefore>20100201000000Z</notBefore>
+                <notAfter>20101231230000Z</notAfter>
+            </signingPeriod>
+            <commonRules>
+                <signerAndVeriferRules>
+                    <signerRules>
+                        <mandatedSignedAttr>
+                            <OBJECT_IDENTIFIER>1.2.840.113549.1.9.3</OBJECT_IDENTIFIER><!-- contentType | Reference Type http://uri.etsi.org/01903#SignedProperties -->
+                            <OBJECT_IDENTIFIER>1.2.840.113549.1.9.4</OBJECT_IDENTIFIER><!-- messageDigest | Reference DigestValue -->
+                            <OBJECT_IDENTIFIER>1.2.840.113549.1.9.16.2.12</OBJECT_IDENTIFIER><!-- signingCertificate | SigningCertificate -->
+                            <OBJECT_IDENTIFIER>1.2.840.113549.1.9.16.2.15</OBJECT_IDENTIFIER><!-- sigPolicyId  | SignaturePolicyIdentifier -->
+                        </mandatedSignedAttr>
+                        <mandatedUnsignedAttr>
+                        </mandatedUnsignedAttr>
+                        <mandatedCertificateInfo><fullPath/></mandatedCertificateInfo>
+                    </signerRules>
+                    <verifierRules>
+                        <mandatedUnsignedAttr>
+                        </mandatedUnsignedAttr>
+                    </verifierRules>
+                </signerAndVeriferRules>
+                <signingCertTrustCondition>
+                    <signerTrustTrees>
+                        <CertificateTrustPoint>
+                            <trustpoint>
+                                <tbsCertificate>
+                                    <version>2</version>
+                                    <serialNumber>1</serialNumber>
+                                    <signature>
+                                        <algorithm>1.2.840.113549.1.1.5</algorithm><!-- sha1withRSAEncryption  | http://www.w3.org/2000/09/xmldsig#rsa-sha1 -->
+                                        <parameters>05 00</parameters>
+                                    </signature>
+                                    <issuer>
+                                        <rdnSequence>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.6</type><!-- countryName -->
+                                                    <value>13 02 53 4B</value><!-- SK -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.7</type><!-- localityName -->
+                                                    <value>0C 0A 42 72 61 74 69 73 6C 61 76 61</value><!-- Bratislava -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.10</type><!-- organizationName -->
+                                                    <value>
+                                                        0C 19 4E 61 72 6F 64 6E 79 20 62 65 7A 70 65 63 
+                                                        6E 6F 73 74 6E 79 20 75 72 61 64
+                                                    </value>
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.11</type><!-- organizationalUnitName -->
+                                                    <value>0C 0B 53 65 6B 63 69 61 20 49 42 45 50</value><!-- Sekcia IBEP -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.3</type><!-- commonName -->
+                                                    <value>0C 0A 4B 43 41 20 4E 42 55 20 53 52</value><!-- KCA NBU SR -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                        </rdnSequence>
+                                    </issuer>
+                                    <validity>
+                                        <notBefore>
+                                            <utcTime>050222161337Z</utcTime>
+                                        </notBefore>
+                                        <notAfter>
+                                            <utcTime>150222154357Z</utcTime>
+                                        </notAfter>
+                                    </validity>
+                                    <subject>
+                                        <rdnSequence>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.6</type><!-- countryName -->
+                                                    <value>13 02 53 4B</value><!-- SK -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.7</type><!-- localityName -->
+                                                    <value>0C 0A 42 72 61 74 69 73 6C 61 76 61</value><!-- Bratislava -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.10</type><!-- organizationName -->
+                                                    <value>
+                                                        0C 19 4E 61 72 6F 64 6E 79 20 62 65 7A 70 65 63 
+                                                        6E 6F 73 74 6E 79 20 75 72 61 64
+                                                    </value>
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.11</type><!-- organizationalUnitName -->
+                                                    <value>0C 0B 53 65 6B 63 69 61 20 49 42 45 50</value><!-- Sekcia IBEP -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.3</type><!-- commonName -->
+                                                    <value>0C 0A 4B 43 41 20 4E 42 55 20 53 52</value><!-- KCA NBU SR -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                        </rdnSequence>
+                                    </subject>
+                                    <subjectPublicKeyInfo>
+                                        <algorithm>
+                                            <algorithm>1.2.840.113549.1.1.1</algorithm><!-- rsaEncryption -->
+                                            <parameters>05 00</parameters>
+                                        </algorithm>
+                                        <subjectPublicKey>
+                                            0011000010000010000000010000101000000010100000100000000100000001
+                                            0000000011110010011011111000111011001001101111010011111101100101
+                                            0110010101000001101111100101111111011100010100011010101101001101
+                                            1100010110100100100011011110001000001100010010110111110001010010
+                                            0111010110011010100000000010001100110110111110111011010001010011
+                                            0111011100011101100011111101000111010111101111011101101000010100
+                                            0111100110001110110110110001001101010001011001101100011101001010
+                                            0011001110101101000011111001010101001111111010001000001110111010
+                                            0000001101000010011100000010111010111110100111001111000101110100
+                                            0110111110000011100001000110110001011101111101100011001001100011
+                                            1001111001101110110111100110001111000000110111110110101100110001
+                                            0111000010000001110101100010000110111010110101110011101010000001
+                                            1111011111110001100101010111101111000001101010100011011000111001
+                                            0111010000001011001011111111001010011011011011010000100010101010
+                                            0000010110100111011011001101101000101110010110111111110110110101
+                                            0000110110111000111111011000101101110101010100111001110110100101
+                                            0000000110011110000111101110001110011000100110111101001100101001
+                                            0001000000111011110101000011100111101011011000011101011000011010
+                                            1010010001100101011110001111111001100011100010001001000110111000
+                                            1101111011110001100110001110000001100111010110001110000010101111
+                                            0001100001100011101010110010100111101100100000111100001111101001
+                                            0001101010110011110110010001001100100111100100111001110001011111
+                                            1001000011010000010101000010110010010110001101001001010010001100
+                                            1100101111101111000001010110001010000010111010111010110110100011
+                                            1011011010111001100001010010111001010100000110111111110000101011
+                                            0011101110101110010100010010001000100100011000001100011010000101
+                                            0011101011101010110010001100100110100101100111011010100111110100
+                                            1101111110011100000010111001110111100101001101010110011111110000
+                                            1110000111010010000111110011101101011100100111111111101100100001
+                                            1011110110011100000110010111110111110110101110001000011001111110
+                                            0111000001011001000011010011101010100100000000110001001111001101
+                                            1011011010001000010001100101110010000100001101000011010011000011
+                                            0101000011100110001100011011010000111111011111001001110111011000
+                                            111000010000001000000011000000010000000000000001
+                                        </subjectPublicKey>
+                                    </subjectPublicKeyInfo>
+                                    <extensions>
+                                        <Extension>
+                                            <extnID>2.5.29.19</extnID><!-- basicConstraints -->
+                                            <critical><true/></critical>
+                                            <extnValue>30 03 01 01 FF</extnValue>
+                                        </Extension>
+                                        <Extension>
+                                            <extnID>2.5.29.32</extnID><!-- certificatePolicies -->
+                                            <extnValue>
+                                                30 81 CF 30 81 C2 06 0D 2B 81 1E 91 99 84 05 00 
+                                                00 00 01 02 02 30 81 B0 30 75 06 08 2B 06 01 05 
+                                                05 07 02 02 30 69 1A 67 43 65 72 74 69 66 69 6B 
+                                                61 74 20 6A 65 20 76 79 64 61 6E 79 20 61 6B 6F 
+                                                20 6B 76 61 6C 69 66 69 6B 6F 76 61 6E 79 20 63 
+                                                65 72 74 69 66 69 6B 61 74 20 4B 43 41 20 4E 42 
+                                                55 20 53 52 20 76 20 73 75 6C 61 64 65 20 73 20 
+                                                70 6C 61 74 6E 79 6D 69 20 70 72 61 76 6E 79 6D 
+                                                69 20 70 72 65 64 70 69 73 6D 69 20 53 52 2E 30 
+                                                37 06 08 2B 06 01 05 05 07 02 01 16 2B 68 74 74 
+                                                70 3A 2F 2F 65 70 2E 6E 62 75 73 72 2E 73 6B 2F 
+                                                6B 63 61 2F 64 6F 63 2F 6B 63 61 71 5F 63 70 31 
+                                                5F 32 5F 32 2E 70 64 66 30 08 06 06 04 00 8E 46 
+                                                01 01
+                                            </extnValue>
+                                        </Extension>
+                                        <Extension>
+                                            <extnID>2.5.29.31</extnID><!-- cRLDistributionPoints -->
+                                            <extnValue>
+                                                30 32 30 30 A0 2E A0 2C 86 2A 68 74 74 70 3A 2F 
+                                                2F 65 70 2E 6E 62 75 73 72 2E 73 6B 2F 6B 63 61 
+                                                2F 63 72 6C 73 32 2F 6B 63 61 6E 62 75 73 72 32 
+                                                2E 63 72 6C
+                                            </extnValue>
+                                        </Extension>
+                                        <Extension>
+                                            <extnID>2.5.29.15</extnID><!-- keyUsage -->
+                                            <critical><true/></critical>
+                                            <extnValue>03 02 01 06</extnValue>
+                                        </Extension>
+                                        <Extension>
+                                            <extnID>2.5.29.14</extnID><!-- subjectKeyIdentifier -->
+                                            <extnValue>
+                                                04 14 06 DA 89 E7 D3 8E 53 3A 79 77 E9 EB F9 A6 
+                                                B6 32 65 3F 46 24
+                                            </extnValue>
+                                        </Extension>
+                                    </extensions>
+                                </tbsCertificate>
+                                <signatureAlgorithm>
+                                    <algorithm>1.2.840.113549.1.1.5</algorithm><!-- sha1withRSAEncryption  | http://www.w3.org/2000/09/xmldsig#rsa-sha1 -->
+                                    <parameters>05 00</parameters>
+                                </signatureAlgorithm>
+                                <signature>
+                                    1111001000111011001010011101000101011000011000010000100110111111
+                                    0100100000011000000100000101011101001011101110101010111110000111
+                                    0111100000001011001010011111100110111010101011100100000111011101
+                                    1111000101101100011111100001101111001001001010010011111011110110
+                                    0100101011101000010000001001110001101010110111110110101101110000
+                                    1110100100100111111110001010000000100111000110111001000000111111
+                                    0111110000011000101000010111011001001000000111010001011101111100
+                                    0110111010001111110000100110111011101011110100111111010010100101
+                                    0001110110100110001011110011011111011011110100100010100111101010
+                                    0001000101011111010100010101010110111111110101000101001011111011
+                                    1000010101110001100011111001101001011000110110001000111101001100
+                                    0100010011100011010100011100110100110000010011111011111010100001
+                                    1101100110111101100110011011110111001000110011000111000101011100
+                                    1011010111011000110001001001010110111001101000011000101000111010
+                                    0100100000110101011001000110100000001011000011011010011100100100
+                                    1111000011010011110101001110111110010110011011111001011001110010
+                                    0111110011111000010110011111101011001001010001001010010100111100
+                                    0001001110000001111101110111010101111011101100101000100000111101
+                                    0101100011010111001000011001011110011100011110100110111010001101
+                                    0010100111101100101110011011110111101100001111011000101110000000
+                                    0000011001110001011011010010110101010110010000001101101001101001
+                                    1010101010000111001001110011010100000111010100011100111010110100
+                                    0010100000011110110101111000011101010010010110100011001110010100
+                                    1001110100110001100000011011011101111000111100001101100110100110
+                                    0001000110110011011101000011100110000100110111001111111100001101
+                                    1110101111010010011001011000000000110110000010101011011011111101
+                                    1101110010100010110110111001100000010010111010010001110000101111
+                                    1110100100111011001111101011100100000001000110010101111000111101
+                                    0101110000001010011001000000010111010101001111110010001101100111
+                                    0001111100000000010101001101111011110011011001111011111111100010
+                                    1111011101011100011001001111000001110100011010000111011100100100
+                                    0000101010110101000110011010101111110100101101000111000111011101
+                                </signature>
+                            </trustpoint>
+                            <acceptablePolicySet>
+                                <CertPolicyId>1.3.158.36061701.0.0.0.1.2.2</CertPolicyId>
+                            </acceptablePolicySet>
+                            <policyConstraints>
+                                <requireExplicitPolicy>0</requireExplicitPolicy>
+                            </policyConstraints>
+                        </CertificateTrustPoint>
+                        <CertificateTrustPoint>
+                            <trustpoint>
+                                <tbsCertificate>
+                                    <version>2</version>
+                                    <serialNumber>1</serialNumber>
+                                    <signature>
+                                        <algorithm>1.2.840.113549.1.1.11</algorithm><!-- sha256WithRSAEncryption | http://www.w3.org/2001/04/xmldsig-more#rsa-sha256 -->
+                                        <parameters>05 00</parameters>
+                                    </signature>
+                                    <issuer>
+                                        <rdnSequence>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.6</type><!-- countryName -->
+                                                    <value>13 02 53 4B</value><!-- SK -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.7</type><!-- localityName -->
+                                                    <value>0C 0A 42 72 61 74 69 73 6C 61 76 61</value><!-- Bratislava -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.10</type><!-- organizationName -->
+                                                    <value>
+                                                        0C 19 4E 61 72 6F 64 6E 79 20 62 65 7A 70 65 63 
+                                                        6E 6F 73 74 6E 79 20 75 72 61 64
+                                                    </value>
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.11</type><!-- organizationalUnitName -->
+                                                    <value>0C 05 53 49 42 45 50</value><!-- SIBEP -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.3</type><!-- commonName -->
+                                                    <value>0C 0C 4B 43 41 20 4E 42 55 20 53 52 20 33</value><!-- KCA NBU SR 3 -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                        </rdnSequence>
+                                    </issuer>
+                                    <validity>
+                                        <notBefore>
+                                            <utcTime>091106095939Z</utcTime>
+                                        </notBefore>
+                                        <notAfter>
+                                            <utcTime>251106072909Z</utcTime>
+                                        </notAfter>
+                                    </validity>
+                                    <subject>
+                                        <rdnSequence>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.6</type><!-- countryName -->
+                                                    <value>13 02 53 4B</value><!-- SK -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.7</type><!-- localityName -->
+                                                    <value>0C 0A 42 72 61 74 69 73 6C 61 76 61</value><!-- Bratislava -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.10</type><!-- organizationName -->
+                                                    <value>
+                                                        0C 19 4E 61 72 6F 64 6E 79 20 62 65 7A 70 65 63 
+                                                        6E 6F 73 74 6E 79 20 75 72 61 64
+                                                    </value>
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.11</type><!-- organizationalUnitName -->
+                                                    <value>0C 05 53 49 42 45 50</value><!-- SIBEP -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                            <RelativeDistinguishedName>
+                                                <AttributeTypeAndValue>
+                                                    <type>2.5.4.3</type><!-- commonName -->
+                                                    <value>0C 0C 4B 43 41 20 4E 42 55 20 53 52 20 33</value><!-- KCA NBU SR 3 -->
+                                                </AttributeTypeAndValue>
+                                            </RelativeDistinguishedName>
+                                        </rdnSequence>
+                                    </subject>
+                                    <subjectPublicKeyInfo>
+                                        <algorithm>
+                                            <algorithm>1.2.840.113549.1.1.1</algorithm><!-- rsaEncryption -->
+                                            <parameters>05 00</parameters>
+                                        </algorithm>
+                                        <subjectPublicKey>
+                                            0011000010000010000000100000101000000010100000100000001000000001
+                                            0000000011011011101010101101000010001111001011110100101010010111
+                                            0001001011010101101110011110101101111101010110011101110010000011
+                                            0101110010001011001100010001011111110010111001010110111001011110
+                                            1100111000101100110100101100010100100111110111000110011111101010
+                                            1011001110001110111100001101011100000101001000011001011111010010
+                                            1001010000001101010101000100100110110001000111110010101111101101
+                                            1110010000110000100111001000110101100000100100110111001000010110
+                                            0010111100001110000110010000101010110111101111101111111101111111
+                                            1100100100011000110010011110010001000000000100011100110101011001
+                                            0110011110110011100001000100111010000100100011111110011111000100
+                                            0100011010100001101110111000000100010011111000010101110001010101
+                                            1011101100100011101110011000011101000111111001101100100010011000
+                                            1000011001110100010111000000100100100000111111001100010101010011
+                                            0001010111011000011101110110011001111110101110110110001110101001
+                                            0010110110110011010010111100101001111000111110000001110001101111
+                                            0110010011011000001000101011101010100111100101001100000111010000
+                                            0010010111110011100011111000001100010100101011111011101011011011
+                                            0101110001011101001011000101011111100010011101111000100100001100
+                                            0001110000010101001000100110100010010111110000001011100010000000
+                                            0110100101100111111101110000000010111000011100110011000010111000
+                                            1110001000110001110101100111110110010101000100101011110100001101
+                                            1110111100101011110110000110101101001000000101101100100100100111
+                                            0111011011011000001011011001010101111111010001011010110000001010
+                                            1011110100011110000100101001000101100000111100011001110001011000
+                                            1000111010110110001011101110111010001101010000101110101101011010
+                                            1001011111100100100000100010000010101000110110010011000011010101
+                                            1110000011010100100001101011000110100001100111100101110001000010
+                                            0011001110100000000101001010000101100001000110110110100110100110
+                                            0010011011000111100011100110101110001011110010000101110000011001
+                                            1001101011111000001000000110001101101111111011101100011111100001
+                                            0001010111000010110111101001101110000010101110010101111110110101
+                                            0000001011101001001110010001000101110110101011010011010000000000
+                                            0111011011011101011101000011101100100110010011011011100011000100
+                                            0110100110000110010000101010111000001111000010000001110111010100
+                                            0100100001001010111000101111010110111101010111101110011011001011
+                                            0011010110110000010000100000110000010100011000010001110001101111
+                                            0001110110100111101101010110001111111101011000111000100001010100
+                                            1001001111101110010000001010010001110111110101001110110110100111
+                                            1000001001110011011000100101011110000010001011010001010010110111
+                                            1101010101001101010011101010000111100111100011111100100010000000
+                                            1101111000010110000011001000001100111011110110000000100100111011
+                                            1110011100100101010010001001111001001010100101000110111010101101
+                                            0110111001100001111000011100100011011111101111100111000000100001
+                                            0101010100010001110101011110001011100100010110110101000101101110
+                                            1011000100111111101100000011000110001011110101010000001010010110
+                                            0100101010000011111111010000011001011111101010010100110100101101
+                                            0001100110101001010000001110001110000101101111111011100010001111
+                                            0101110110101010000011101110000110000100100011011110111110101101
+                                            0100111110010000011100100101111111100110101000100101010111001001
+                                            1000010010111100011101000010001100111111011110011100101001000000
+                                            0100110100010010100100011111110100010111110111010010010100100011
+                                            0110011000011101110000111100011101111001101011110001010011111001
+                                            1001101011111001101111111110110100011111111101000011100100010110
+                                            0010011111111100111100001100110010110000000101100011010111010101
+                                            0011011111100000001011100010110011010100101100000110011000101100
+                                            0000111010101110000110000000000110011111100011111100101110011110
+                                            1011000100001111101110010001100100010010100000100000110111000110
+                                            0111000001010000000011010111110111100101011100101100110111011010
+                                            1000110100001001011000100111011110101011111101011001011000111001
+                                            0010111111100000110000010100111000001000110110111100011010000111
+                                            0011000101111011001011100111100110101010111110110000010010101001
+                                            0110100001100010001001001110110100001010110000100100100000110000
+                                            0011001111111111111011010001111000100011101110010101101100010100
+                                            1011111101000101011011101010010011010110110110110011010111101000
+                                            111000110000001000000011000000010000000000000001
+                                        </subjectPublicKey>
+                                    </subjectPublicKeyInfo>
+                                    <extensions>
+                                        <Extension>
+                                            <extnID>2.5.29.32</extnID><!-- certificatePolicies -->
+                                            <extnValue>
+                                                30 47 30 45 06 0D 2B 81 1E 91 99 84 05 00 00 00 
+                                                01 02 02 30 34 30 32 06 08 2B 06 01 05 05 07 02 
+                                                01 16 26 68 74 74 70 3A 2F 2F 65 70 2E 6E 62 75 
+                                                73 72 2E 73 6B 2F 6B 63 61 2F 64 6F 63 2F 6B 63 
+                                                61 5F 63 70 73 2E 70 64 66
+                                            </extnValue>
+                                        </Extension>
+                                        <Extension>
+                                            <extnID>2.5.29.19</extnID><!-- basicConstraints -->
+                                            <critical><true/></critical>
+                                            <extnValue>30 03 01 01 FF</extnValue>
+                                        </Extension>
+                                        <Extension>
+                                            <extnID>2.5.29.31</extnID><!-- cRLDistributionPoints -->
+                                            <extnValue>
+                                                30 82 01 4B 30 30 A0 2E A0 2C 86 2A 68 74 74 70 
+                                                3A 2F 2F 65 70 2E 6E 62 75 73 72 2E 73 6B 2F 6B 
+                                                63 61 2F 63 72 6C 73 33 2F 6B 63 61 6E 62 75 73 
+                                                72 33 2E 63 72 6C 30 81 90 A0 81 8D A0 81 8A 86 
+                                                81 87 6C 64 61 70 3A 2F 2F 65 70 2E 6E 62 75 73 
+                                                72 2E 73 6B 2F 63 6E 25 33 64 4B 43 41 25 32 30 
+                                                4E 42 55 25 32 30 53 52 25 32 30 33 2C 6F 75 25 
+                                                33 64 53 49 42 45 50 2C 6F 25 33 64 4E 61 72 6F 
+                                                64 6E 79 25 32 30 62 65 7A 70 65 63 6E 6F 73 74 
+                                                6E 79 25 32 30 75 72 61 64 2C 6C 25 33 64 42 72 
+                                                61 74 69 73 6C 61 76 61 2C 63 25 33 64 53 4B 3F 
+                                                63 65 72 74 69 66 69 63 61 74 65 52 65 76 6F 63 
+                                                61 74 69 6F 6E 4C 69 73 74 30 81 83 A0 81 80 A0 
+                                                7E 86 7C 6C 64 61 70 3A 2F 2F 2F 63 6E 25 33 64 
+                                                4B 43 41 25 32 30 4E 42 55 25 32 30 53 52 25 32 
+                                                30 33 2C 6F 75 25 33 64 53 49 42 45 50 2C 6F 25 
+                                                33 64 4E 61 72 6F 64 6E 79 25 32 30 62 65 7A 70 
+                                                65 63 6E 6F 73 74 6E 79 25 32 30 75 72 61 64 2C 
+                                                6C 25 33 64 42 72 61 74 69 73 6C 61 76 61 2C 63 
+                                                25 33 64 53 4B 3F 63 65 72 74 69 66 69 63 61 74 
+                                                65 52 65 76 6F 63 61 74 69 6F 6E 4C 69 73 74
+                                            </extnValue>
+                                        </Extension>
+                                        <Extension>
+                                            <extnID>1.3.6.1.5.5.7.1.11</extnID><!-- subjectInfoAccess -->
+                                            <extnValue>
+                                                30 82 01 2A 30 3B 06 08 2B 06 01 05 05 07 30 05 
+                                                86 2F 68 74 74 70 3A 2F 2F 65 70 2E 6E 62 75 73 
+                                                72 2E 73 6B 2F 6B 63 61 2F 63 65 72 74 73 2F 6B 
+                                                63 61 33 2F 6B 63 61 6E 62 75 73 72 33 2E 70 37 
+                                                63 30 7A 06 08 2B 06 01 05 05 07 30 05 86 6E 6C 
+                                                64 61 70 3A 2F 2F 65 70 2E 6E 62 75 73 72 2E 73 
+                                                6B 2F 63 6E 3D 4B 43 41 20 4E 42 55 20 53 52 20 
+                                                33 2C 6F 75 3D 53 49 42 45 50 2C 6F 3D 4E 61 72 
+                                                6F 64 6E 79 20 62 65 7A 70 65 63 6E 6F 73 74 6E 
+                                                79 20 75 72 61 64 2C 6C 3D 42 72 61 74 69 73 6C 
+                                                61 76 61 2C 63 3D 53 4B 3F 63 61 43 65 72 74 69 
+                                                66 69 63 61 74 65 3B 62 69 6E 61 72 79 30 6F 06 
+                                                08 2B 06 01 05 05 07 30 05 86 63 6C 64 61 70 3A 
+                                                2F 2F 2F 63 6E 3D 4B 43 41 20 4E 42 55 20 53 52 
+                                                20 33 2C 6F 75 3D 53 49 42 45 50 2C 6F 3D 4E 61 
+                                                72 6F 64 6E 79 20 62 65 7A 70 65 63 6E 6F 73 74 
+                                                6E 79 20 75 72 61 64 2C 6C 3D 42 72 61 74 69 73 
+                                                6C 61 76 61 2C 63 3D 53 4B 3F 63 61 43 65 72 74 
+                                                69 66 69 63 61 74 65 3B 62 69 6E 61 72 79
+                                            </extnValue>
+                                        </Extension>
+                                        <Extension>
+                                            <extnID>2.5.29.15</extnID><!-- keyUsage -->
+                                            <critical><true/></critical>
+                                            <extnValue>03 02 01 06</extnValue>
+                                        </Extension>
+                                        <Extension>
+                                            <extnID>2.5.29.14</extnID><!-- subjectKeyIdentifier -->
+                                            <extnValue>
+                                                04 14 7F F1 3D 21 C2 97 5A 2E 97 07 0E B1 69 83 
+                                                25 FD 21 86 3E 07
+                                            </extnValue>
+                                        </Extension>
+                                    </extensions>
+                                </tbsCertificate>
+                                <signatureAlgorithm>
+                                    <algorithm>1.2.840.113549.1.1.11</algorithm><!-- sha256WithRSAEncryption | http://www.w3.org/2001/04/xmldsig-more#rsa-sha256 -->
+                                    <parameters>05 00</parameters>
+                                </signatureAlgorithm>
+                                <signature>
+                                    0011011011011011111110010001001011101001011001010100001010110010
+                                    1010001110111001100010011110111001111011110110010001111001110010
+                                    0110111101101111101000001011000000100111110000101010001011101010
+                                    1000101010011110000101110001000000011101101101101001101011001000
+                                    0000000010111000100010101100101110010000010010110101111000110010
+                                    1101111010110101100100111111000001000101100000101101100001010111
+                                    0110101011101111010111110000011100000000111111010000100101111011
+                                    1011011110101011000001001110001110110101111111111001111111001001
+                                    0011100000011011010100110101011010010101010001110100011011111111
+                                    0000011100101100110100110110111001101001001010011101011110111111
+                                    0110010101000011100101001011110001011100111010011101101011000001
+                                    0010111101111001111010111011001001010110001101000111011010001101
+                                    1000100100010101101110000101110011010011011101110101100110110100
+                                    0001001010110000100001111111000100000110100011100101010110110011
+                                    0101011110110100101110010110110100000110011010011101010011001000
+                                    0101110110100100011000000011001100011100001000100101100010001010
+                                    0110100001101101110111011110011110111011010100111101101101011010
+                                    0101011000001111100000100010110101111001011101110000010001011000
+                                    1110001011100100100111111000110011010100001101010001110001010110
+                                    1101010101010110000001111001111110001011101001100111100000111011
+                                    0111110110011000001010110011110001010101110111111100001101111110
+                                    0011101011001110111011100101011011000101010111001001111000101100
+                                    1010111100100011011001011110100011111000110001101101010001010111
+                                    0011100110011101000101110110000100110001001101101111101110100000
+                                    1011100111111101001110101000110111101001000111001111110101010111
+                                    1100011101001000010101100011100111001110110011010110110000110000
+                                    1001110010011001001000110101011010011000100110100100011011101101
+                                    1000010100000010000001110010000100000101011110011011000010101101
+                                    1111111100000110101010111111110011110100100011110001100111000111
+                                    0110000010000001110000010101010011001100111111011101100000110011
+                                    1100110111000111011011000011011011111000011101000100010101101001
+                                    0001101111011110101000101011110110110101010110101010000100100111
+                                    0010011010110110100100000110000010000101000010000011111110100001
+                                    1110100000101100100110101101010111011110100100110001001110000110
+                                    1001011000001110111001101111010101110100000001011111100000101111
+                                    0101110000110101100101101010011101011010110000000110111000101011
+                                    1001111100111111100001111000011010000001101110010110011000101010
+                                    0001010000010111001100110101110100010100100100010001100000100100
+                                    0010011101000010010001011100011011101011000110110100000011101100
+                                    0011101101101110010010001001111101010001100110010101010110110011
+                                    1011101010011010000101011001110010100001111111101010111111000000
+                                    1010010110111000011100010011100100100111001010100010110100111101
+                                    0011000101000111101110011001011101011010101110011010000010101011
+                                    1011010101010110110000100011001100001110001010011011001010011001
+                                    0100011110110100000001110110101100000110111001110010010110100111
+                                    1001000000100110001100111111011101010000010110100110000100000111
+                                    0101101001101110101111010111010100010110010111000010001000101010
+                                    1011100010001100001101110011100101010111011100011101111000000101
+                                    0000101111111010001110100011001011110011110011010011111011110101
+                                    0001011011001110010010001000010001010111110111000010000011110011
+                                    0110101110110011101101100010001010000000001101101010010001011010
+                                    0001010110000111000011101111001011000001110110000110101000111100
+                                    0111100000100001100011010110010000010000101110001011110101001101
+                                    0100011110011100101101101110010110001011110110000100100011011010
+                                    0011011010011111010011100010011001110110110010111101100110000101
+                                    1100001001010101111010011010110101101111110100111101010001100001
+                                    1101011001000110111110100000010110101001000111111001000011100101
+                                    0001000000001100011000011011000011001010010110001111101010100001
+                                    1111101111000111010110110010111010011110111011100000110110110111
+                                    0000001000011001100110011101000001001010011001000110111011111010
+                                    0011000000111100001100111101001001100000100011111000001001100110
+                                    0001001010100010111010110011110111010101000001000000000110101001
+                                    1110010011100001100101110111100001000110100111100101100010010100
+                                    1001001111000111110001011101100110100011010010010111101011000000
+                                </signature>
+                            </trustpoint>
+                            <acceptablePolicySet>
+                                <CertPolicyId>1.3.158.36061701.0.0.0.1.2.2</CertPolicyId>
+                            </acceptablePolicySet>
+                            <policyConstraints>
+                                <requireExplicitPolicy>0</requireExplicitPolicy>
+                            </policyConstraints>
+                        </CertificateTrustPoint>
+                    </signerTrustTrees>
+                    <signerRevReq>
+                        <endCertRevReq>
+                            <enuRevReq><eitherCheck/></enuRevReq>
+                        </endCertRevReq>
+                        <caCerts>
+                            <enuRevReq><eitherCheck/></enuRevReq>
+                        </caCerts>
+                    </signerRevReq>
+                </signingCertTrustCondition>
+                <timeStampTrustCondition>
+                    <cautionPeriod>
+                        <deltaSeconds>0</deltaSeconds>
+                        <deltaMinutes>0</deltaMinutes>
+                        <deltaHours>0</deltaHours>
+                        <deltaDays>1</deltaDays>
+                    </cautionPeriod>
+                </timeStampTrustCondition>
+                <algorithmConstraintSet>
+                    <signerAlgorithmConstraints>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.1</algID><!-- sha-256 | http://www.w3.org/2001/04/xmlenc#sha256 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.14.3.2.26</algID><!-- sha1 | http://www.w3.org/2000/09/xmldsig#sha1 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.4</algID><!-- sha-224 | http://www.w3.org/2001/04/xmldsig-more#sha224 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.0.10118.3.0.55</algID><!-- whirlpool -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.2</algID><!-- sha-384 | http://www.w3.org/2001/04/xmldsig-more#sha384 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.3</algID><!-- sha-512 | http://www.w3.org/2001/04/xmlenc#sha512 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.1</algID><!-- rsaEncryption -->
+                            <minKeyLength>1024</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.2.1</algID><!-- ecPublicKey -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.2.1</algID><!-- ecgPublicKey -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.5</algID><!-- sha1withRSAEncryption  | http://www.w3.org/2000/09/xmldsig#rsa-sha1 -->
+                            <minKeyLength>1024</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.14</algID><!-- sha224WithRSAEncryption -->
+                            <minKeyLength>1024</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.11</algID><!-- sha256WithRSAEncryption | http://www.w3.org/2001/04/xmldsig-more#rsa-sha256 -->
+                            <minKeyLength>1024</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.12</algID><!-- sha384WithRSAEncryption  | http://www.w3.org/2001/04/xmldsig-more#rsa-sha384 -->
+                            <minKeyLength>1024</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.13</algID><!-- sha512WithRSAEncryption  | http://www.w3.org/2001/04/xmldsig-more#rsa-sha512 -->
+                            <minKeyLength>1024</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.10</algID><!-- rsaPSS -->
+                            <minKeyLength>1024</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.3.1</algID><!-- dsaWithSha224 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.3.2</algID><!-- dsaWithSha256 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.1</algID><!-- ecdsaWithSHA224 -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.2</algID><!-- ecdsaWithSHA256 -->
+                            <minKeyLength>256</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.3</algID><!-- ecdsaWithSHA384 -->
+                            <minKeyLength>384</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.4</algID><!-- ecdsaWithSHA512 -->
+                            <minKeyLength>512</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.3</algID><!-- ecgSignatureWithsha224 -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.4</algID><!-- ecgSignatureWithsha256 -->
+                            <minKeyLength>256</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.5</algID><!-- ecgSignatureWithsha384 -->
+                            <minKeyLength>384</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.6</algID><!-- ecgSignatureWithsha512 -->
+                            <minKeyLength>512</minKeyLength>
+                        </AlgAndLength>
+                    </signerAlgorithmConstraints>
+                    <eeCertAlgorithmConstraints>
+                        <AlgAndLength>
+                            <algID>1.3.14.3.2.26</algID><!-- sha1 | http://www.w3.org/2000/09/xmldsig#sha1 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.4</algID><!-- sha-224 | http://www.w3.org/2001/04/xmldsig-more#sha224 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.1</algID><!-- sha-256 | http://www.w3.org/2001/04/xmlenc#sha256 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.0.10118.3.0.55</algID><!-- whirlpool -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.2</algID><!-- sha-384 | http://www.w3.org/2001/04/xmldsig-more#sha384 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.3</algID><!-- sha-512 | http://www.w3.org/2001/04/xmlenc#sha512 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.1</algID><!-- rsaEncryption -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.2.1</algID><!-- ecPublicKey -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.2.1</algID><!-- ecgPublicKey -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.5</algID><!-- sha1withRSAEncryption  | http://www.w3.org/2000/09/xmldsig#rsa-sha1 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.14</algID><!-- sha224WithRSAEncryption -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.11</algID><!-- sha256WithRSAEncryption | http://www.w3.org/2001/04/xmldsig-more#rsa-sha256 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.12</algID><!-- sha384WithRSAEncryption  | http://www.w3.org/2001/04/xmldsig-more#rsa-sha384 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.13</algID><!-- sha512WithRSAEncryption  | http://www.w3.org/2001/04/xmldsig-more#rsa-sha512 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.10</algID><!-- rsaPSS -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.3.1</algID><!-- dsaWithSha224 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.3.2</algID><!-- dsaWithSha256 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.1</algID><!-- ecdsaWithSHA224 -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.2</algID><!-- ecdsaWithSHA256 -->
+                            <minKeyLength>256</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.3</algID><!-- ecdsaWithSHA384 -->
+                            <minKeyLength>384</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.4</algID><!-- ecdsaWithSHA512 -->
+                            <minKeyLength>512</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.3</algID><!-- ecgSignatureWithsha224 -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.4</algID><!-- ecgSignatureWithsha256 -->
+                            <minKeyLength>256</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.5</algID><!-- ecgSignatureWithsha384 -->
+                            <minKeyLength>384</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.6</algID><!-- ecgSignatureWithsha512 -->
+                            <minKeyLength>512</minKeyLength>
+                        </AlgAndLength>
+                    </eeCertAlgorithmConstraints>
+                    <caCertAlgorithmConstraints>
+                        <AlgAndLength>
+                            <algID>1.3.14.3.2.26</algID><!-- sha1 | http://www.w3.org/2000/09/xmldsig#sha1 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.4</algID><!-- sha-224 | http://www.w3.org/2001/04/xmldsig-more#sha224 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.1</algID><!-- sha-256 | http://www.w3.org/2001/04/xmlenc#sha256 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.0.10118.3.0.55</algID><!-- whirlpool -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.2</algID><!-- sha-384 | http://www.w3.org/2001/04/xmldsig-more#sha384 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.3</algID><!-- sha-512 | http://www.w3.org/2001/04/xmlenc#sha512 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.1</algID><!-- rsaEncryption -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.2.1</algID><!-- ecPublicKey -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.2.1</algID><!-- ecgPublicKey -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.5</algID><!-- sha1withRSAEncryption  | http://www.w3.org/2000/09/xmldsig#rsa-sha1 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.14</algID><!-- sha224WithRSAEncryption -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.11</algID><!-- sha256WithRSAEncryption | http://www.w3.org/2001/04/xmldsig-more#rsa-sha256 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.12</algID><!-- sha384WithRSAEncryption  | http://www.w3.org/2001/04/xmldsig-more#rsa-sha384 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.13</algID><!-- sha512WithRSAEncryption  | http://www.w3.org/2001/04/xmldsig-more#rsa-sha512 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.10</algID><!-- rsaPSS -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.3.1</algID><!-- dsaWithSha224 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.3.2</algID><!-- dsaWithSha256 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.1</algID><!-- ecdsaWithSHA224 -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.2</algID><!-- ecdsaWithSHA256 -->
+                            <minKeyLength>256</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.3</algID><!-- ecdsaWithSHA384 -->
+                            <minKeyLength>384</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.4</algID><!-- ecdsaWithSHA512 -->
+                            <minKeyLength>512</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.3</algID><!-- ecgSignatureWithsha224 -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.4</algID><!-- ecgSignatureWithsha256 -->
+                            <minKeyLength>256</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.5</algID><!-- ecgSignatureWithsha384 -->
+                            <minKeyLength>384</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.6</algID><!-- ecgSignatureWithsha512 -->
+                            <minKeyLength>512</minKeyLength>
+                        </AlgAndLength>
+                    </caCertAlgorithmConstraints>
+                    <aaCertAlgorithmConstraints>
+                        <AlgAndLength>
+                            <algID>1.3.14.3.2.26</algID><!-- sha1 | http://www.w3.org/2000/09/xmldsig#sha1 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.4</algID><!-- sha-224 | http://www.w3.org/2001/04/xmldsig-more#sha224 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.1</algID><!-- sha-256 | http://www.w3.org/2001/04/xmlenc#sha256 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.0.10118.3.0.55</algID><!-- whirlpool -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.2</algID><!-- sha-384 | http://www.w3.org/2001/04/xmldsig-more#sha384 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.3</algID><!-- sha-512 | http://www.w3.org/2001/04/xmlenc#sha512 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.1</algID><!-- rsaEncryption -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.2.1</algID><!-- ecPublicKey -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.2.1</algID><!-- ecgPublicKey -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.5</algID><!-- sha1withRSAEncryption  | http://www.w3.org/2000/09/xmldsig#rsa-sha1 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.14</algID><!-- sha224WithRSAEncryption -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.11</algID><!-- sha256WithRSAEncryption | http://www.w3.org/2001/04/xmldsig-more#rsa-sha256 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.12</algID><!-- sha384WithRSAEncryption  | http://www.w3.org/2001/04/xmldsig-more#rsa-sha384 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.13</algID><!-- sha512WithRSAEncryption  | http://www.w3.org/2001/04/xmldsig-more#rsa-sha512 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.10</algID><!-- rsaPSS -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.3.1</algID><!-- dsaWithSha224 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.3.2</algID><!-- dsaWithSha256 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.1</algID><!-- ecdsaWithSHA224 -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.2</algID><!-- ecdsaWithSHA256 -->
+                            <minKeyLength>256</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.3</algID><!-- ecdsaWithSHA384 -->
+                            <minKeyLength>384</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.4</algID><!-- ecdsaWithSHA512 -->
+                            <minKeyLength>512</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.3</algID><!-- ecgSignatureWithsha224 -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.4</algID><!-- ecgSignatureWithsha256 -->
+                            <minKeyLength>256</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.5</algID><!-- ecgSignatureWithsha384 -->
+                            <minKeyLength>384</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.6</algID><!-- ecgSignatureWithsha512 -->
+                            <minKeyLength>512</minKeyLength>
+                        </AlgAndLength>
+                    </aaCertAlgorithmConstraints>
+                    <tsaCertAlgorithmConstraints>
+                        <AlgAndLength>
+                            <algID>1.3.14.3.2.26</algID><!-- sha1 | http://www.w3.org/2000/09/xmldsig#sha1 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.4</algID><!-- sha-224 | http://www.w3.org/2001/04/xmldsig-more#sha224 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.1</algID><!-- sha-256 | http://www.w3.org/2001/04/xmlenc#sha256 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.0.10118.3.0.55</algID><!-- whirlpool -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.2</algID><!-- sha-384 | http://www.w3.org/2001/04/xmldsig-more#sha384 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.2.3</algID><!-- sha-512 | http://www.w3.org/2001/04/xmlenc#sha512 -->
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.1</algID><!-- rsaEncryption -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.2.1</algID><!-- ecPublicKey -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.2.1</algID><!-- ecgPublicKey -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.5</algID><!-- sha1withRSAEncryption  | http://www.w3.org/2000/09/xmldsig#rsa-sha1 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.14</algID><!-- sha224WithRSAEncryption -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.11</algID><!-- sha256WithRSAEncryption | http://www.w3.org/2001/04/xmldsig-more#rsa-sha256 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.12</algID><!-- sha384WithRSAEncryption  | http://www.w3.org/2001/04/xmldsig-more#rsa-sha384 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.13</algID><!-- sha512WithRSAEncryption  | http://www.w3.org/2001/04/xmldsig-more#rsa-sha512 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.113549.1.1.10</algID><!-- rsaPSS -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.3.1</algID><!-- dsaWithSha224 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>2.16.840.1.101.3.4.3.2</algID><!-- dsaWithSha256 -->
+                            <minKeyLength>2048</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.1</algID><!-- ecdsaWithSHA224 -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.2</algID><!-- ecdsaWithSHA256 -->
+                            <minKeyLength>256</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.3</algID><!-- ecdsaWithSHA384 -->
+                            <minKeyLength>384</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.2.840.10045.4.3.4</algID><!-- ecdsaWithSHA512 -->
+                            <minKeyLength>512</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.3</algID><!-- ecgSignatureWithsha224 -->
+                            <minKeyLength>224</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.4</algID><!-- ecgSignatureWithsha256 -->
+                            <minKeyLength>256</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.5</algID><!-- ecgSignatureWithsha384 -->
+                            <minKeyLength>384</minKeyLength>
+                        </AlgAndLength>
+                        <AlgAndLength>
+                            <algID>1.3.36.3.3.2.5.4.6</algID><!-- ecgSignatureWithsha512 -->
+                            <minKeyLength>512</minKeyLength>
+                        </AlgAndLength>
+                    </tsaCertAlgorithmConstraints>
+                </algorithmConstraintSet>
+            </commonRules>
+            <commitmentRules>
+                <CommitmentRule>
+                    <selCommitmentTypes>
+                        <empty></empty>
+                    </selCommitmentTypes>
+                </CommitmentRule>
+            </commitmentRules>
+        </signatureValidationPolicy>
+    </signPolicyInfo>
+    <signPolicyHash>
+        26 F3 CE D1 47 6E A0 0A 0B A7 7B E0 C2 85 1E F8 
+        F1 DD D1 27 86 32 09 94 4B 64 BE EF 0B E7 42 0A
+    </signPolicyHash>
+</SignaturePolicy>

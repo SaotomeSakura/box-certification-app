@@ -1,0 +1,704 @@
+ASN.1 dump 20161002000000zsignaturepolicy.der
+	HASH(SHA256:2 16 840 1 101 3 4 2 1)= 4ADBC235F7B84E5BE253A9A0788B04FF12331FBA077615C223A29CB3ABB0DFC1
+SEQUENCE {
+ SEQUENCE {
+  OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.1 sha-256
+ }
+ SEQUENCE {
+  OBJECT IDENTIFIER 1.3.158.36061701.1.2.3 SignaturePolicyRegulation(EU)No910/2014
+  GeneralizedTime 20210330000000Z
+  SEQUENCE {
+   [04] {
+    SEQUENCE {
+     SET {
+      SEQUENCE {
+       OBJECT IDENTIFIER 2.5.4.6 countryName
+       PrintableString SK
+      }
+     }
+     SET {
+      SEQUENCE {
+       OBJECT IDENTIFIER 2.5.4.7 localityName
+       UTF8String Bratislava
+      }
+     }
+     SET {
+      SEQUENCE {
+       OBJECT IDENTIFIER 2.5.4.10 organizationName
+       UTF8String Narodny bezpecnostny urad
+      }
+     }
+     SET {
+      SEQUENCE {
+       OBJECT IDENTIFIER 2.5.4.11 organizationalUnitName
+       UTF8String SRD
+      }
+     }
+    }
+   }
+   [06] http://ep.nbu.gov.sk/trusted_data/20210330000000zsignaturepolicy.der
+  }
+  UTF8String EN: The advanced electronic signature or seal according to Regulation (EU) No 910/2014. SK: Zdokonalený elektronický podpis alebo pečať podľa nariadenia (EÚ) č. 910/2014. 
+  SEQUENCE {
+   SEQUENCE {
+    GeneralizedTime 20210330000000Z
+    GeneralizedTime 20251231000000Z
+   }
+   SEQUENCE {
+    [00] {
+     SEQUENCE {
+      SEQUENCE {
+       SEQUENCE {
+        OBJECT IDENTIFIER 1.2.840.113549.1.9.3 contentType
+        OBJECT IDENTIFIER 1.2.840.113549.1.9.4 messageDigest
+        OBJECT IDENTIFIER 1.2.840.113549.1.9.5 signingTime
+        OBJECT IDENTIFIER 1.2.840.113549.1.9.16.2.47 signingCertificateV2
+       }
+       SEQUENCE {
+       }
+       [01] {
+        ENUMERATED 2
+       }
+      }
+      SEQUENCE {
+       SEQUENCE {
+       }
+      }
+     }
+    }
+    [04] {
+     SEQUENCE {
+      [00] {
+       SEQUENCE {
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.1 sha-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.2 sha-384
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.3 sha-512
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.6 sha512-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.8 sha3-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.9 sha3-384
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.10 sha3-512
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.2 dsaWithSha256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.3 dsa-with-sha384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.4 dsa-with-sha512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.6 dsa-with-sha3-256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.7 dsa-with-sha3-384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.8 dsa-with-sha3-512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.2 ecdsaWithSHA256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.3 ecdsaWithSHA384
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.4 ecdsaWithSHA512
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.10 ecdsa-with-sha3-256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.11 ecdsa-with-sha3-384 
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.12 ecdsa-with-sha3-512
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.11 sha256WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.12 sha384WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.13 sha512WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.14 rsassa-pkcs1-v1_5-with-sha3-256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.15 rsassa-pkcs1-v1_5-with-sha3-384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.16 rsassa-pkcs1-v1_5-with-sha3-512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.10 rsaPSS
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.1 rsaEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.2.1 ecPublicKey
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.2.1 ecgPublicKey
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.4 ecgSignatureWithsha256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.5 ecgSignatureWithsha384
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.6 ecgSignatureWithsha512
+         INTEGER 256
+        }
+       }
+      }
+      [01] {
+       SEQUENCE {
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.1 sha-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.2 sha-384
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.3 sha-512
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.6 sha512-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.8 sha3-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.9 sha3-384
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.10 sha3-512
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.2 dsaWithSha256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.3 dsa-with-sha384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.4 dsa-with-sha512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.6 dsa-with-sha3-256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.7 dsa-with-sha3-384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.8 dsa-with-sha3-512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.2 ecdsaWithSHA256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.3 ecdsaWithSHA384
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.4 ecdsaWithSHA512
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.10 ecdsa-with-sha3-256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.11 ecdsa-with-sha3-384 
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.12 ecdsa-with-sha3-512
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.11 sha256WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.12 sha384WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.13 sha512WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.14 rsassa-pkcs1-v1_5-with-sha3-256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.15 rsassa-pkcs1-v1_5-with-sha3-384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.16 rsassa-pkcs1-v1_5-with-sha3-512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.10 rsaPSS
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.1 rsaEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.2.1 ecPublicKey
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.2.1 ecgPublicKey
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.4 ecgSignatureWithsha256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.5 ecgSignatureWithsha384
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.6 ecgSignatureWithsha512
+         INTEGER 256
+        }
+       }
+      }
+      [02] {
+       SEQUENCE {
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.1 sha-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.2 sha-384
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.3 sha-512
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.6 sha512-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.8 sha3-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.9 sha3-384
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.10 sha3-512
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.2 dsaWithSha256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.3 dsa-with-sha384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.4 dsa-with-sha512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.6 dsa-with-sha3-256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.7 dsa-with-sha3-384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.8 dsa-with-sha3-512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.2 ecdsaWithSHA256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.3 ecdsaWithSHA384
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.4 ecdsaWithSHA512
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.10 ecdsa-with-sha3-256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.11 ecdsa-with-sha3-384 
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.12 ecdsa-with-sha3-512
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.11 sha256WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.12 sha384WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.13 sha512WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.14 rsassa-pkcs1-v1_5-with-sha3-256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.15 rsassa-pkcs1-v1_5-with-sha3-384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.16 rsassa-pkcs1-v1_5-with-sha3-512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.10 rsaPSS
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.1 rsaEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.2.1 ecPublicKey
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.2.1 ecgPublicKey
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.4 ecgSignatureWithsha256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.5 ecgSignatureWithsha384
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.6 ecgSignatureWithsha512
+         INTEGER 256
+        }
+       }
+      }
+      [03] {
+       SEQUENCE {
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.1 sha-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.2 sha-384
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.3 sha-512
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.6 sha512-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.8 sha3-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.9 sha3-384
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.10 sha3-512
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.2 dsaWithSha256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.3 dsa-with-sha384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.4 dsa-with-sha512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.6 dsa-with-sha3-256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.7 dsa-with-sha3-384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.8 dsa-with-sha3-512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.2 ecdsaWithSHA256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.3 ecdsaWithSHA384
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.4 ecdsaWithSHA512
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.10 ecdsa-with-sha3-256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.11 ecdsa-with-sha3-384 
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.12 ecdsa-with-sha3-512
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.11 sha256WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.12 sha384WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.13 sha512WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.14 rsassa-pkcs1-v1_5-with-sha3-256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.15 rsassa-pkcs1-v1_5-with-sha3-384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.16 rsassa-pkcs1-v1_5-with-sha3-512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.10 rsaPSS
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.1 rsaEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.2.1 ecPublicKey
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.2.1 ecgPublicKey
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.4 ecgSignatureWithsha256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.5 ecgSignatureWithsha384
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.6 ecgSignatureWithsha512
+         INTEGER 256
+        }
+       }
+      }
+      [04] {
+       SEQUENCE {
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.1 sha-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.2 sha-384
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.3 sha-512
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.6 sha512-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.8 sha3-256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.9 sha3-384
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.2.10 sha3-512
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.2 dsaWithSha256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.3 dsa-with-sha384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.4 dsa-with-sha512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.6 dsa-with-sha3-256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.7 dsa-with-sha3-384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.8 dsa-with-sha3-512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.2 ecdsaWithSHA256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.3 ecdsaWithSHA384
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.4.3.4 ecdsaWithSHA512
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.10 ecdsa-with-sha3-256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.11 ecdsa-with-sha3-384 
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.12 ecdsa-with-sha3-512
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.11 sha256WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.12 sha384WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.13 sha512WithRSAEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.14 rsassa-pkcs1-v1_5-with-sha3-256
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.15 rsassa-pkcs1-v1_5-with-sha3-384
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 2.16.840.1.101.3.4.3.16 rsassa-pkcs1-v1_5-with-sha3-512
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.10 rsaPSS
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.113549.1.1.1 rsaEncryption
+         INTEGER 2048
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.2.840.10045.2.1 ecPublicKey
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.2.1 ecgPublicKey
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.4 ecgSignatureWithsha256
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.5 ecgSignatureWithsha384
+         INTEGER 256
+        }
+        SEQUENCE {
+         OBJECT IDENTIFIER 1.3.36.3.3.2.5.4.6 ecgSignatureWithsha512
+         INTEGER 256
+        }
+       }
+      }
+     }
+    }
+   }
+   SEQUENCE {
+   }
+  }
+ }
+ OCTET STRING 5AAB8A2AC3455D78E7938A587FA83AAA7637E7E45F648B2DF95B5E2ADE594FF8
+}

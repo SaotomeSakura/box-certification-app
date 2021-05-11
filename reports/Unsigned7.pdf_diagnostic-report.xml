@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DiagnosticData xmlns="http://dss.esig.europa.eu/validation/diagnostic">
+    <DocumentName>hasValidSignature.in.pdf</DocumentName>
+    <ValidationDate>2021-05-11T11:24:59</ValidationDate>
+    <Signatures/>
+    <UsedCertificates/>
+    <UsedRevocations/>
+    <UsedTimestamps/>
+    <OrphanTokens/>
+    <OriginalDocuments/>
+    <TrustedLists/>
+</DiagnosticData>
